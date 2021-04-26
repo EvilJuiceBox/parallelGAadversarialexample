@@ -272,8 +272,8 @@ def getFitness(image, model, truth):
     x = np.expand_dims(image, 0)
     y = model.predict(x)
 
-    # if truth != np.argmax(y):
-    if truth != np.argmax(y) and y[0][np.argmax(y)] > 0.9:  # and argmax is greater than 90% confidence
+    if truth != np.argmax(y):
+    # if truth != np.argmax(y) and y[0][np.argmax(y)] > 0.9:  # and argmax is greater than 90% confidence
         return -1
     # returns the confidence level of the corresponding item
     # print("fitness estimate:")
