@@ -17,12 +17,17 @@ def modifyImageByPixel(image, x, y, newvalue):
     image[x][y] = newvalue
 
 
-def mutate(candidate, IMAGEDIMENSION):
+def mutate1(candidate, IMAGEDIMENSION):
     target = candidate.getImage()
     for i in range(3):  # modify 3 random pixel, number is selected arbitrary for now
-        randomPixelMutate(target, random.randint(0, IMAGEDIMENSION-1), random.randint(0, IMAGEDIMENSION-1))
+        randomPixelMutate(target, random.randint(0, IMAGEDIMENSION - 1), random.randint(0, IMAGEDIMENSION - 1))
     candidate.setImage(target)
 
+
+def mutate(candidate, IMAGEDIMENSION):
+    target = candidate.getImage()
+    randomPixelMutate(target, random.randint(0, IMAGEDIMENSION - 1), random.randint(0, IMAGEDIMENSION - 1))
+    candidate.setImage(target)
 
 def randomPixelMutate(image, x, y):
     channel = random.randint(0, 2)  # find a random channel to modify
@@ -35,11 +40,11 @@ def randomPixelMutate(image, x, y):
         if value > 255:
             value = 255
     else:
-        value = value - (255*0.1)  # decrease value by 10 percent
+        value = value - (255 * 0.1)  # decrease value by 10 percent
         if value < 0:
             value = 0
 
-    image[x][y][channel] = value/255
+    image[x][y][channel] = value / 255
 
     # print("New:" + str(image[x][y][channel] * 255))
     # print(" ")
@@ -92,6 +97,78 @@ def removeIndividual(iterable, item):
     return iterable
 
 
+def parallelGAhighConf(populationSize, generation, inputImage, model, y_truth, IMAGEDIMENSION):
+    print("parallelGA High Confidence start")
+    islandCount = 3  # 3 island, might allow dynamic allocation later
+    numberOfChildren = 3  # 3 children per generation.
+    tournamentSize = 3  # tournament size
+    islands = []
+    for i in range(islandCount):
+        population = []
+        for j in range(populationSize):
+            population.append(Candidate(inputImage))
+        islands.append(population)
+
+    for i in range(generation):
+        for z in range(islandCount):
+            # print("BEGINNING OF GENERATION: " + str(i))
+            # generate children
+            tempPopulation = []
+            mutants = copy.deepcopy(islands[z])
+
+            # Force each memeber of the population to mutate at least once.
+            # copiedTemp = []
+            # for j in range(len(tempPopulation)):
+            #     copiedTemp.append(mutate(tempPopulation[j], IMAGEDIMENSION))
+            #
+            # tempPopulation = copiedTemp
+            copytemp = copy.deepcopy(islands[z])
+            for x in range(len(copytemp)):
+                target = mutants[x]
+                mutate(target, IMAGEDIMENSION)
+                tempPopulation.append(Candidate(target.getImage()))
+
+            for j in range(numberOfChildren):
+                offspring1, offspring2 = tournamentSelection(islands[z], tournamentSize, model, y_truth)
+                # Crossover operation
+                child1, child2 = crossover(offspring1, offspring2, IMAGEDIMENSION)
+
+                # Mutate operation and add to temp pop
+                mutate(child1, IMAGEDIMENSION)
+                mutate(child2, IMAGEDIMENSION)
+
+                tempPopulation.append(Candidate(child1.getImage()))
+                tempPopulation.append(Candidate(child2.getImage()))
+
+            # cull population down to original size, and proceed to next gen.
+            tempPopulation = calculatePopulationHighConfFitness(tempPopulation, model, y_truth)
+            tempPopulation.sort(key=attrgetter("fitness"), reverse=False)
+
+            if tempPopulation[0].getFitness() == -1:
+                print("The solution was found at generation: " + str(i))
+                return tempPopulation[0].getImage(), i
+
+            islands[z] = survivorSelection(tempPopulation, populationSize, 3, model,
+                                           y_truth)  # elitism of 3 per round, chosen arbitrary
+
+        if i % 10 == 0:  # every 10 generation, migrate
+            migrate = 0
+            while migrate < populationSize:
+                temp = islands[0][migrate]
+                islands[0][migrate] = islands[1][migrate]
+                islands[1][migrate] = islands[2][migrate]
+                islands[2][migrate] = temp
+                migrate += 1
+
+        if i % 100 == 0:
+            print("End of generation: " + str(i) + "; Best performing member: " + str(
+                islands[0][0].getFitness()) + "; Worse performing member: " + str(
+                islands[len(islands) - 1][0].getFitness()))
+        # print("END OF GENERATION: " + str(i))
+
+    return getBestMember(islands).getImage()
+
+
 def parallelGA(populationSize, generation, inputImage, model, y_truth, IMAGEDIMENSION):
     print("parallelGA start")
     islandCount = 3  # 3 island, might allow dynamic allocation later
@@ -141,9 +218,10 @@ def parallelGA(populationSize, generation, inputImage, model, y_truth, IMAGEDIME
 
             if tempPopulation[0].getFitness() == -1:
                 print("The solution was found at generation: " + str(i))
-                return tempPopulation[0].getImage()
+                return tempPopulation[0].getImage(), i
 
-            islands[z] = survivorSelection(tempPopulation, populationSize, 3, model, y_truth)  # elitism of 3 per round, chosen arbitrary
+            islands[z] = survivorSelection(tempPopulation, populationSize, 3, model,
+                                           y_truth)  # elitism of 3 per round, chosen arbitrary
 
         if i % 10 == 0:  # every 10 generation, migrate
             migrate = 0
@@ -155,7 +233,9 @@ def parallelGA(populationSize, generation, inputImage, model, y_truth, IMAGEDIME
                 migrate += 1
 
         if i % 100 == 0:
-            print("End of generation: " + str(i) + "; Best performing member: " + str(islands[0][0].getFitness()) + "; Worse performing member: " + str(islands[len(islands)-1][0].getFitness()))
+            print("End of generation: " + str(i) + "; Best performing member: " + str(
+                islands[0][0].getFitness()) + "; Worse performing member: " + str(
+                islands[len(islands) - 1][0].getFitness()))
         # print("END OF GENERATION: " + str(i))
 
     return getBestMember(islands).getImage()
@@ -167,6 +247,7 @@ def getBestMember(islands):
         if best.getFitness() > islands[i][0].getFitness():
             best = islands[i][0]
     return best
+
 
 # generates an image, populationSize, generation, and IMAGEDIMENSION are numbers
 # inputImage is an inputImage from the CIFAR10 data
@@ -229,17 +310,21 @@ def generateImageGA(populationSize, generation, inputImage, model, y_truth, IMAG
 
         if tempPopulation[0].getFitness() == -1:
             print(str(i))
-            return tempPopulation[0].getImage()
+            return tempPopulation[0].getImage(), i
 
-        population = survivorSelection(tempPopulation, populationSize, 3, model, y_truth)  # elitism of 3 per round, chosen arbitrary
+        population = survivorSelection(tempPopulation, populationSize, 3, model,
+                                       y_truth)  # elitism of 3 per round, chosen arbitrary
         if i % 100 == 0:
-            print("End of generation: " + str(i) + "; Best performing member: " + str(population[0].getFitness()) + "; Worse performing member: " + str(population[len(population)-1].getFitness()))
+            print("End of generation: " + str(i) + "; Best performing member: " + str(
+                population[0].getFitness()) + "; Worse performing member: " + str(
+                population[len(population) - 1].getFitness()))
         # print("END OF GENERATION: " + str(i))
     return population[0].getImage()
 
 
 # input image, tournament size (usually 3), returns 2 individuals that performs the best within the tournament selection
-def tournamentSelection(inp, tournamentSize, model, truth):  # returns 2 individuals via tournament selection (cannot be same)
+def tournamentSelection(inp, tournamentSize, model,
+                        truth):  # returns 2 individuals via tournament selection (cannot be same)
     individuals = copy.deepcopy(inp)
 
     # for element in individuals:
@@ -273,12 +358,54 @@ def getFitness(image, model, truth):
     y = model.predict(x)
 
     if truth != np.argmax(y):
-    # if truth != np.argmax(y) and y[0][np.argmax(y)] > 0.9:  # and argmax is greater than 90% confidence
+        # if truth != np.argmax(y) and y[0][np.argmax(y)] > 0.9:  # and argmax is greater than 90% confidence
         return -1
     # returns the confidence level of the corresponding item
     # print("fitness estimate:")
     # print(y[0][np.argmax(y)])
     return y[0][np.argmax(y)]
+
+
+def getFitnessOnConstraint(original, image, model, truth, IMAGEDIMENSION):
+    x = np.expand_dims(image, 0)
+    y = model.predict(x)
+    lambda1 = 1
+    lambda2 = 0.1
+
+    if truth != np.argmax(y):
+        # if truth != np.argmax(y) and y[0][np.argmax(y)] > 0.9:  # and argmax is greater than 90% confidence
+        return -1
+
+    # Base + L1 + L2
+    # multiply base by 100 so the range is 0-100
+    # L1 norm is number of pixel changes, range: (0, 32)
+    # L2 norm is the sum of difference of pixel value squared
+    fitness = 100 * y[0][np.argmax(y)] + lambda1 * getl1normdiff(original, image, IMAGEDIMENSION) + lambda2 * compare(original, image, IMAGEDIMENSION)
+
+
+#   returns -1 if the image does not match ground truth
+#   returns the confidence interval of the image otherwise
+def getHighConfFitness(image, model, truth):
+    # image = candidateInput.getImage()
+    x = np.expand_dims(image, 0)
+    y = model.predict(x)
+
+    # if truth != np.argmax(y):
+    if truth != np.argmax(y) and y[0][np.argmax(y)] > 0.9:  # and argmax is greater than 90% confidence
+        return -1
+    # returns the confidence level of the corresponding item
+    # print("fitness estimate:")
+    # print(y[0][np.argmax(y)])
+    return y[0][np.argmax(y)]
+
+
+def calculatePopulationHighConfFitness(population, model, truth):
+    temp = []
+    for sample in population:
+        item = Candidate(sample.getImage())
+        item.setFitness(getHighConfFitness(sample.getImage(), model, truth))
+        temp.append(item)
+    return temp
 
 
 def calculatePopulationFitness(population, model, truth):
@@ -290,7 +417,7 @@ def calculatePopulationFitness(population, model, truth):
     return temp
 
 
-def init(args): # loads the pretrained model
+def init(args):  # loads the pretrained model
     # suppress tensorflow error output
     import tensorflow as tf
     tf.logging.set_verbosity(tf.logging.ERROR)
@@ -312,9 +439,24 @@ def compare(image1, image2, IMAGEDIMENSION):
     for i in range(IMAGEDIMENSION):
         for j in range(IMAGEDIMENSION):
             for k in range(3):  # RGB channels
-                mse += (image1[i][j][k] - image2[i][j][k])**2
+                mse += (image1[i][j][k] - image2[i][j][k]) ** 2
 
-    return mse
+    return math.sqrt(mse)
+
+
+# returns the number of changed pixels
+def getl1normdiff(original, perturbed, IMAGEDIMENSION):
+    result = 0
+    for i in range(IMAGEDIMENSION):
+        for j in range(IMAGEDIMENSION):
+            gate = False
+            for k in range(3):  # RGB channels
+                if original[i][j][k] != perturbed[i][j][k]:
+                    gate = True
+
+            if gate:
+                result += 1
+    return result
 
 
 def showImg(imgToDisplay):
@@ -330,6 +472,7 @@ def getDifference(original, perturbed, IMAGEDIMENSION):
             for k in range(3):  # RGB channels
                 result[i][j][k] -= perturbed[i][j][k]
     return result
+
 
 # main script
 def main(model):
@@ -389,11 +532,12 @@ def main(model):
     # img = Image.fromarray(np.uint8(testSubject.getImage().reshape(input_shape) * 255), 'RGB').resize((128, 128))
     # img.show()
 
+    num = 1564
 
-
-    original = x_test[404]
-    groundtruth = y_test[404]
-    print(np.argmax(y_test[404]))
+    print("Image Number: " + str(num))
+    original = x_test[num]
+    groundtruth = y_test[num]
+    print(np.argmax(groundtruth))
 
     x = np.expand_dims(original, 0)
     y = model.predict(x)
@@ -402,64 +546,133 @@ def main(model):
     print(f'Prediction: {np.argmax(y)}')
     print(f'Prediction: {y[0][np.argmax(y)]}')
 
-
-
-
-
-    # # EXPERIMENT 1, generating 10 random adversarial images, then sort by MSE
-    # img = Image.fromarray(np.uint8(original.reshape(input_shape) * 255), 'RGB').resize((128, 128))
-    # img.show()
-    # img.save("./results/" + "original.png")
-    #
-    # collection = []
-    # for i in range(5):
-    #     result = generateImageGA(populationSize=25, generation=1000, inputImage=original, model=model,
-    #                                      y_truth=np.argmax(groundtruth), IMAGEDIMENSION=32)
-    #     temp = AdversarialExample(result)
-    #     temp.setMSE(compare(original, result, 32))
-    #     collection.append(temp)
-    #
-    # collection.sort(key=attrgetter("_mse"), reverse=False)
-    #
-    # for i in range(len(collection)):
-    #     img = Image.fromarray(np.uint8(collection[i].getImage().reshape(input_shape) * 255), 'RGB').resize((128, 128))
-    #     imgTitle = "Adversarial Input MSE " + str(round(collection[i].getMSE(), 2)*100)
-    #
-    #     print(str(imgTitle))
-    #     img.show(title=imgTitle)
-    #     img.save("./results/" + str(imgTitle) + ".png")
-    #
-    #     x = np.expand_dims(collection[i].getImage(), 0)
-    #     y = model.predict(x)
-    #     print(f'Prediction: {y}')
-    #     print(f'Prediction: {class_labels[np.argmax(y)]}')
-    #     print(f'Prediction: {np.argmax(y)}')  # ground turth
-    #     print(f'Prediction: {y[0][np.argmax(y)]}')
-
-
-
-# # EXPERIMENT 2, generating 10 random adversarial images with parallel GA, then sort by MSE
+    # EXPERIMENT 1, generating 10 random adversarial images, then sort by MSE
     img = Image.fromarray(np.uint8(original.reshape(input_shape) * 255), 'RGB').resize((128, 128))
     img.show()
-    img.save("./parallelResults/" + "original.png")
+    img.save("./exp/results/" + str({class_labels[np.argmax(y)]})  + "original.png")
 
     collection = []
     for i in range(5):
-        result = parallelGA(populationSize=15, generation=1000, inputImage=original, model=model,
-                                         y_truth=np.argmax(groundtruth), IMAGEDIMENSION=32)
+        timestart = timeit.default_timer()
+        result, generation = generateImageGA(populationSize=45, generation=1000, inputImage=original, model=model,
+                                 y_truth=np.argmax(groundtruth), IMAGEDIMENSION=32)
         temp = AdversarialExample(result)
         temp.setMSE(compare(original, result, 32))
+        temp.setl1(getl1normdiff(original, result, 32))
+
+        temp.setGeneration(generation)
+        timestop = timeit.default_timer()
+        temp.setTime(timestop - timestart)
+
         collection.append(temp)
 
+    print("\n----- Results ------\n")
     collection.sort(key=attrgetter("_mse"), reverse=False)
 
     for i in range(len(collection)):
         img = Image.fromarray(np.uint8(collection[i].getImage().reshape(input_shape) * 255), 'RGB').resize((128, 128))
-        imgTitle = "Adversarial Input MSE " + str(round(collection[i].getMSE(), 2)*100)
+        imgTitle = "Adversarial Input MSE " + str(round(collection[i].getMSE(), 2) * 100) + " " + str(i)
 
-        print(str(imgTitle))
+        print(str("Adversarial Example produced."))
+        print("L2 norm difference: " + str(round(collection[i].getMSE(), 2)))
+        print("L1 norm difference: " + str(collection[i].getl1()))
+        print("Time: " + str(collection[i].getTime()))
+        print("Generation: " + str(collection[i].getGeneration()))
         img.show(title=imgTitle)
-        img.save("./parallelResults/" + str(imgTitle) + ".png")
+        img.save("./exp/results/" + str(imgTitle) + ".png")
+
+        x = np.expand_dims(collection[i].getImage(), 0)
+        y = model.predict(x)
+        print(f'Prediction: {y}')
+        print(f'Prediction: {class_labels[np.argmax(y)]}')
+        print(f'Prediction: {np.argmax(y)}')  # ground turth
+        print(f'Prediction: {y[0][np.argmax(y)]}')
+        print("\n")
+
+    # # EXPERIMENT 2, generating 10 random adversarial images with parallel GA, then sort by MSE
+    print(" ")
+    print("----- EXPERIMENT 2: Parallel GA -----")
+
+    img = Image.fromarray(np.uint8(original.reshape(input_shape) * 255), 'RGB').resize((128, 128))
+    img.show()
+    img.save("./exp/parallelResults/" + "original.png")
+
+    collection = []
+    for i in range(5):
+        timestart = timeit.default_timer()
+
+        result, generation = parallelGA(populationSize=15, generation=1000, inputImage=original, model=model,
+                            y_truth=np.argmax(groundtruth), IMAGEDIMENSION=32)
+        temp = AdversarialExample(result)
+        temp.setMSE(compare(original, result, 32))
+        temp.setl1(getl1normdiff(original, result, 32))
+
+        temp.setGeneration(generation)
+        timestop = timeit.default_timer()
+        temp.setTime(timestop - timestart)
+
+        collection.append(temp)
+
+    print("\n----- Results ------\n")
+    collection.sort(key=attrgetter("_mse"), reverse=False)
+
+    for i in range(len(collection)):
+        img = Image.fromarray(np.uint8(collection[i].getImage().reshape(input_shape) * 255), 'RGB').resize((128, 128))
+        imgTitle = "Adversarial Input MSE " + str(round(collection[i].getMSE(), 2) * 100) + " " + str(i)
+
+        print(str("Adversarial Example produced."))
+        print("L2 norm difference: " + str(round(collection[i].getMSE(), 2)))
+        print("L1 norm difference: " + str(collection[i].getl1()))
+        print("Time: " + str(collection[i].getTime()))
+        print("Generation: " + str(collection[i].getGeneration()))
+        img.show(title=imgTitle)
+        img.save("./exp/parallelResults/" + str(imgTitle) + ".png")
+
+        x = np.expand_dims(collection[i].getImage(), 0)
+        y = model.predict(x)
+        print(f'Prediction: {y}')
+        print(f'Prediction: {class_labels[np.argmax(y)]}')
+        print(f'Prediction: {np.argmax(y)}')  # ground turth
+        print(f'Prediction: {y[0][np.argmax(y)]}')
+        print(" ")
+
+    # # EXPERIMENT 3, generating 5 random adversarial images with parallel GA with high confidence, then sort by MSE
+    print(" ")
+    print("----- EXPERIMENT 3: High ConfidenceParallel GA -----")
+
+    img = Image.fromarray(np.uint8(original.reshape(input_shape) * 255), 'RGB').resize((128, 128))
+    img.show()
+    img.save("./exp/highConfResult/" + "original.png")
+
+    collection = []
+    for i in range(5):
+        timestart = timeit.default_timer()
+        result, generation = parallelGAhighConf(populationSize=15, generation=1000, inputImage=original, model=model,
+                                    y_truth=np.argmax(groundtruth), IMAGEDIMENSION=32)
+        temp = AdversarialExample(result)
+        temp.setMSE(compare(original, result, 32))
+        temp.setl1(getl1normdiff(original, result, 32))
+
+        temp.setGeneration(generation)
+        timestop = timeit.default_timer()
+        temp.setTime(timestop - timestart)
+
+        collection.append(temp)
+
+    collection.sort(key=attrgetter("_mse"), reverse=False)
+
+    print("\n----- Results ------\n")
+    for i in range(len(collection)):
+        img = Image.fromarray(np.uint8(collection[i].getImage().reshape(input_shape) * 255), 'RGB').resize((128, 128))
+        imgTitle = "Adversarial Input MSE " + str(round(collection[i].getMSE(), 2) * 100) + " " + str(i)
+
+        print(str("HighConfidence Adversarial Example produced."))
+        print("L2 norm difference: " + str(round(collection[i].getMSE(), 2)))
+        print("L1 norm difference: " + str(collection[i].getl1()))
+        print("Time: " + str(collection[i].getTime()))
+        print("Generation: " + str(collection[i].getGeneration()))
+        img.show(title=imgTitle)
+        img.save("./exp/highConfResult/" + str(imgTitle) + ".png")
 
         x = np.expand_dims(collection[i].getImage(), 0)
         y = model.predict(x)
@@ -470,12 +683,19 @@ def main(model):
         print(" ")
 
 
-
-
 if __name__ == '__main__':
     import warnings
+
+    import timeit
+    start = timeit.default_timer()
+
     warnings.simplefilter(action='ignore', category=FutureWarning)
     warnings.simplefilter(action='ignore', category=UserWarning)
 
     parser = argparse.ArgumentParser()
     main(init(parser.parse_args()))
+
+    stop = timeit.default_timer()
+    print("\n\n\n\n")
+    print("END OF PROGRAM EXECUTION")
+    print('Total Time: ', stop - start)

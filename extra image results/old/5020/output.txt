@@ -1,0 +1,364 @@
+Loading cifar10_dnn.h5...
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 32, 32, 3)    0                                            
+__________________________________________________________________________________________________
+conv2d_1 (Conv2D)               (None, 32, 32, 16)   448         input_1[0][0]                    
+__________________________________________________________________________________________________
+batch_normalization_1 (BatchNor (None, 32, 32, 16)   64          conv2d_1[0][0]                   
+__________________________________________________________________________________________________
+activation_1 (Activation)       (None, 32, 32, 16)   0           batch_normalization_1[0][0]      
+__________________________________________________________________________________________________
+conv2d_2 (Conv2D)               (None, 32, 32, 16)   2320        activation_1[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_2 (BatchNor (None, 32, 32, 16)   64          conv2d_2[0][0]                   
+__________________________________________________________________________________________________
+activation_2 (Activation)       (None, 32, 32, 16)   0           batch_normalization_2[0][0]      
+__________________________________________________________________________________________________
+conv2d_3 (Conv2D)               (None, 32, 32, 16)   2320        activation_2[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_3 (BatchNor (None, 32, 32, 16)   64          conv2d_3[0][0]                   
+__________________________________________________________________________________________________
+add_1 (Add)                     (None, 32, 32, 16)   0           activation_1[0][0]               
+                                                                 batch_normalization_3[0][0]      
+__________________________________________________________________________________________________
+activation_3 (Activation)       (None, 32, 32, 16)   0           add_1[0][0]                      
+__________________________________________________________________________________________________
+conv2d_4 (Conv2D)               (None, 32, 32, 16)   2320        activation_3[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_4 (BatchNor (None, 32, 32, 16)   64          conv2d_4[0][0]                   
+__________________________________________________________________________________________________
+activation_4 (Activation)       (None, 32, 32, 16)   0           batch_normalization_4[0][0]      
+__________________________________________________________________________________________________
+conv2d_5 (Conv2D)               (None, 32, 32, 16)   2320        activation_4[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_5 (BatchNor (None, 32, 32, 16)   64          conv2d_5[0][0]                   
+__________________________________________________________________________________________________
+add_2 (Add)                     (None, 32, 32, 16)   0           activation_3[0][0]               
+                                                                 batch_normalization_5[0][0]      
+__________________________________________________________________________________________________
+activation_5 (Activation)       (None, 32, 32, 16)   0           add_2[0][0]                      
+__________________________________________________________________________________________________
+conv2d_6 (Conv2D)               (None, 32, 32, 16)   2320        activation_5[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_6 (BatchNor (None, 32, 32, 16)   64          conv2d_6[0][0]                   
+__________________________________________________________________________________________________
+activation_6 (Activation)       (None, 32, 32, 16)   0           batch_normalization_6[0][0]      
+__________________________________________________________________________________________________
+conv2d_7 (Conv2D)               (None, 32, 32, 16)   2320        activation_6[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_7 (BatchNor (None, 32, 32, 16)   64          conv2d_7[0][0]                   
+__________________________________________________________________________________________________
+add_3 (Add)                     (None, 32, 32, 16)   0           activation_5[0][0]               
+                                                                 batch_normalization_7[0][0]      
+__________________________________________________________________________________________________
+activation_7 (Activation)       (None, 32, 32, 16)   0           add_3[0][0]                      
+__________________________________________________________________________________________________
+conv2d_8 (Conv2D)               (None, 16, 16, 32)   4640        activation_7[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_8 (BatchNor (None, 16, 16, 32)   128         conv2d_8[0][0]                   
+__________________________________________________________________________________________________
+activation_8 (Activation)       (None, 16, 16, 32)   0           batch_normalization_8[0][0]      
+__________________________________________________________________________________________________
+conv2d_9 (Conv2D)               (None, 16, 16, 32)   9248        activation_8[0][0]               
+__________________________________________________________________________________________________
+conv2d_10 (Conv2D)              (None, 16, 16, 32)   544         activation_7[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_9 (BatchNor (None, 16, 16, 32)   128         conv2d_9[0][0]                   
+__________________________________________________________________________________________________
+add_4 (Add)                     (None, 16, 16, 32)   0           conv2d_10[0][0]                  
+                                                                 batch_normalization_9[0][0]      
+__________________________________________________________________________________________________
+activation_9 (Activation)       (None, 16, 16, 32)   0           add_4[0][0]                      
+__________________________________________________________________________________________________
+conv2d_11 (Conv2D)              (None, 16, 16, 32)   9248        activation_9[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_10 (BatchNo (None, 16, 16, 32)   128         conv2d_11[0][0]                  
+__________________________________________________________________________________________________
+activation_10 (Activation)      (None, 16, 16, 32)   0           batch_normalization_10[0][0]     
+__________________________________________________________________________________________________
+conv2d_12 (Conv2D)              (None, 16, 16, 32)   9248        activation_10[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_11 (BatchNo (None, 16, 16, 32)   128         conv2d_12[0][0]                  
+__________________________________________________________________________________________________
+add_5 (Add)                     (None, 16, 16, 32)   0           activation_9[0][0]               
+                                                                 batch_normalization_11[0][0]     
+__________________________________________________________________________________________________
+activation_11 (Activation)      (None, 16, 16, 32)   0           add_5[0][0]                      
+__________________________________________________________________________________________________
+conv2d_13 (Conv2D)              (None, 16, 16, 32)   9248        activation_11[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_12 (BatchNo (None, 16, 16, 32)   128         conv2d_13[0][0]                  
+__________________________________________________________________________________________________
+activation_12 (Activation)      (None, 16, 16, 32)   0           batch_normalization_12[0][0]     
+__________________________________________________________________________________________________
+conv2d_14 (Conv2D)              (None, 16, 16, 32)   9248        activation_12[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_13 (BatchNo (None, 16, 16, 32)   128         conv2d_14[0][0]                  
+__________________________________________________________________________________________________
+add_6 (Add)                     (None, 16, 16, 32)   0           activation_11[0][0]              
+                                                                 batch_normalization_13[0][0]     
+__________________________________________________________________________________________________
+activation_13 (Activation)      (None, 16, 16, 32)   0           add_6[0][0]                      
+__________________________________________________________________________________________________
+conv2d_15 (Conv2D)              (None, 8, 8, 64)     18496       activation_13[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_14 (BatchNo (None, 8, 8, 64)     256         conv2d_15[0][0]                  
+__________________________________________________________________________________________________
+activation_14 (Activation)      (None, 8, 8, 64)     0           batch_normalization_14[0][0]     
+__________________________________________________________________________________________________
+conv2d_16 (Conv2D)              (None, 8, 8, 64)     36928       activation_14[0][0]              
+__________________________________________________________________________________________________
+conv2d_17 (Conv2D)              (None, 8, 8, 64)     2112        activation_13[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_15 (BatchNo (None, 8, 8, 64)     256         conv2d_16[0][0]                  
+__________________________________________________________________________________________________
+add_7 (Add)                     (None, 8, 8, 64)     0           conv2d_17[0][0]                  
+                                                                 batch_normalization_15[0][0]     
+__________________________________________________________________________________________________
+activation_15 (Activation)      (None, 8, 8, 64)     0           add_7[0][0]                      
+__________________________________________________________________________________________________
+conv2d_18 (Conv2D)              (None, 8, 8, 64)     36928       activation_15[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_16 (BatchNo (None, 8, 8, 64)     256         conv2d_18[0][0]                  
+__________________________________________________________________________________________________
+activation_16 (Activation)      (None, 8, 8, 64)     0           batch_normalization_16[0][0]     
+__________________________________________________________________________________________________
+conv2d_19 (Conv2D)              (None, 8, 8, 64)     36928       activation_16[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_17 (BatchNo (None, 8, 8, 64)     256         conv2d_19[0][0]                  
+__________________________________________________________________________________________________
+add_8 (Add)                     (None, 8, 8, 64)     0           activation_15[0][0]              
+                                                                 batch_normalization_17[0][0]     
+__________________________________________________________________________________________________
+activation_17 (Activation)      (None, 8, 8, 64)     0           add_8[0][0]                      
+__________________________________________________________________________________________________
+conv2d_20 (Conv2D)              (None, 8, 8, 64)     36928       activation_17[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_18 (BatchNo (None, 8, 8, 64)     256         conv2d_20[0][0]                  
+__________________________________________________________________________________________________
+activation_18 (Activation)      (None, 8, 8, 64)     0           batch_normalization_18[0][0]     
+__________________________________________________________________________________________________
+conv2d_21 (Conv2D)              (None, 8, 8, 64)     36928       activation_18[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_19 (BatchNo (None, 8, 8, 64)     256         conv2d_21[0][0]                  
+__________________________________________________________________________________________________
+add_9 (Add)                     (None, 8, 8, 64)     0           activation_17[0][0]              
+                                                                 batch_normalization_19[0][0]     
+__________________________________________________________________________________________________
+activation_19 (Activation)      (None, 8, 8, 64)     0           add_9[0][0]                      
+__________________________________________________________________________________________________
+global_average_pooling2d_1 (Glo (None, 64)           0           activation_19[0][0]              
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 10)           650         global_average_pooling2d_1[0][0] 
+__________________________________________________________________________________________________
+activation_20 (Activation)      (None, 10)           0           dense_1[0][0]                    
+==================================================================================================
+Total params: 274,442
+Trainable params: 273,066
+Non-trainable params: 1,376
+__________________________________________________________________________________________________
+Input shape: (50000, 32, 32, 3)
+Output shape: (50000, 10)
+Image Number: 5000
+7
+Prediction: [[1.9009377e-07 1.0457750e-10 1.6860639e-13 6.4565718e-08 2.7005278e-13
+  2.6017797e-11 4.4146178e-13 9.9999976e-01 2.5133061e-17 5.4577521e-14]]
+Prediction: horse
+Prediction: 7
+Prediction: 0.9999997615814209
+End of generation: 0; Best performing member: 0.99999917; Worse performing member: 0.99999917
+34
+End of generation: 0; Best performing member: 0.9999994; Worse performing member: 0.99999964
+33
+End of generation: 0; Best performing member: 0.99999964; Worse performing member: 0.9999999
+34
+End of generation: 0; Best performing member: 0.9999993; Worse performing member: 0.99999964
+31
+End of generation: 0; Best performing member: 0.99999857; Worse performing member: 0.9999995
+35
+
+----- Results ------
+
+Adversarial Example produced.
+L2 norm difference: 1.58
+L1 norm difference: 153
+Prediction: [[5.4854351e-01 1.4005256e-05 5.2473821e-09 4.3394892e-03 2.4686428e-09
+  2.6995605e-07 2.4988919e-08 4.4710267e-01 2.8151247e-13 5.1451718e-09]]
+Prediction: airplane
+Prediction: 0
+Prediction: 0.5485435128211975
+
+
+Adversarial Example produced.
+L2 norm difference: 2.18
+L1 norm difference: 187
+Prediction: [[6.7731017e-01 1.2062311e-07 1.1582253e-10 4.2223321e-05 2.3854625e-09
+  2.8472729e-07 8.5972113e-10 3.2264727e-01 4.3292945e-14 7.8000101e-10]]
+Prediction: airplane
+Prediction: 0
+Prediction: 0.6773101687431335
+
+
+Adversarial Example produced.
+L2 norm difference: 2.23
+L1 norm difference: 198
+Prediction: [[6.3255877e-04 6.9176417e-07 2.9018890e-10 6.4195877e-01 3.8694773e-11
+  3.4094928e-06 3.9248507e-09 3.5740456e-01 9.8630590e-14 1.3934237e-09]]
+Prediction: cat
+Prediction: 3
+Prediction: 0.6419587731361389
+
+
+Adversarial Example produced.
+L2 norm difference: 2.38
+L1 norm difference: 213
+Prediction: [[1.4451536e-03 6.6242677e-07 1.8272128e-10 6.4703560e-01 5.7759155e-11
+  2.4671070e-05 8.7905967e-09 3.5149390e-01 2.8350176e-14 2.2505824e-09]]
+Prediction: cat
+Prediction: 3
+Prediction: 0.6470355987548828
+
+
+Adversarial Example produced.
+L2 norm difference: 2.39
+L1 norm difference: 214
+Prediction: [[5.8215243e-01 4.2461211e-06 7.3917445e-09 6.7498587e-02 1.4199852e-09
+  1.6284367e-06 1.2951308e-08 3.5034314e-01 8.3953244e-14 2.9710636e-09]]
+Prediction: airplane
+Prediction: 0
+Prediction: 0.5821524262428284
+
+
+ 
+----- EXPERIMENT 2: Parallel GA -----
+parallelGA start
+End of generation: 0; Best performing member: 0.99999976; Worse performing member: 0.9999995
+The solution was found at generation: 28
+parallelGA start
+End of generation: 0; Best performing member: 0.9999995; Worse performing member: 0.9999995
+The solution was found at generation: 30
+parallelGA start
+End of generation: 0; Best performing member: 0.99999964; Worse performing member: 0.9999976
+The solution was found at generation: 26
+parallelGA start
+End of generation: 0; Best performing member: 0.99999964; Worse performing member: 0.9999993
+The solution was found at generation: 28
+parallelGA start
+End of generation: 0; Best performing member: 0.9999994; Worse performing member: 0.99999964
+The solution was found at generation: 33
+
+----- Results ------
+
+Adversarial Example produced.
+L2 norm difference: 1.01
+L1 norm difference: 100
+Prediction: [[4.9027959e-01 8.1823509e-06 7.6203071e-09 2.4232818e-02 4.0856696e-09
+  2.4857272e-07 2.5582214e-08 4.8547909e-01 4.5330718e-13 5.3692109e-09]]
+Prediction: airplane
+Prediction: 0
+Prediction: 0.49027958512306213
+ 
+Adversarial Example produced.
+L2 norm difference: 1.1
+L1 norm difference: 109
+Prediction: [[1.4028300e-03 2.5785080e-06 2.3062476e-09 5.1914346e-01 2.2750563e-10
+  2.0442562e-06 5.4732496e-08 4.7944903e-01 8.3127190e-14 7.0223343e-09]]
+Prediction: cat
+Prediction: 3
+Prediction: 0.5191434621810913
+ 
+Adversarial Example produced.
+L2 norm difference: 1.23
+L1 norm difference: 118
+Prediction: [[5.7617986e-01 6.4043666e-06 8.7270022e-09 3.1902330e-04 3.3136965e-10
+  9.2737231e-08 7.4905868e-09 4.2349467e-01 3.0079457e-13 1.4553911e-09]]
+Prediction: airplane
+Prediction: 0
+Prediction: 0.5761798620223999
+ 
+Adversarial Example produced.
+L2 norm difference: 1.43
+L1 norm difference: 136
+Prediction: [[6.1669823e-05 5.7106558e-07 3.8816414e-10 5.3259283e-01 6.2808814e-11
+  3.2586736e-06 5.1281528e-08 4.6734163e-01 1.3435444e-13 4.8282112e-10]]
+Prediction: cat
+Prediction: 3
+Prediction: 0.5325928330421448
+ 
+Adversarial Example produced.
+L2 norm difference: 1.54
+L1 norm difference: 146
+Prediction: [[5.9747326e-01 7.4184309e-06 2.3683933e-09 2.1562743e-04 2.4413380e-09
+  1.2005731e-07 4.5708521e-09 4.0230361e-01 4.8875324e-13 3.1171143e-10]]
+Prediction: airplane
+Prediction: 0
+Prediction: 0.5974732637405396
+ 
+ 
+----- EXPERIMENT 3: High ConfidenceParallel GA -----
+parallelGA High Confidence start
+End of generation: 0; Best performing member: 0.99999964; Worse performing member: 0.99999964
+The solution was found at generation: 39
+parallelGA High Confidence start
+End of generation: 0; Best performing member: 0.9999994; Worse performing member: 0.99999964
+The solution was found at generation: 39
+parallelGA High Confidence start
+End of generation: 0; Best performing member: 0.9999994; Worse performing member: 0.99999905
+The solution was found at generation: 43
+parallelGA High Confidence start
+End of generation: 0; Best performing member: 0.99999964; Worse performing member: 0.99999964
+The solution was found at generation: 38
+parallelGA High Confidence start
+End of generation: 0; Best performing member: 0.9999995; Worse performing member: 0.9999982
+The solution was found at generation: 42
+
+----- Results ------
+
+HighConfidence Adversarial Example produced.
+L2 norm difference: 1.29
+L1 norm difference: 123
+Prediction: [[9.1880250e-01 3.5852831e-06 8.0341950e-10 2.0151261e-04 7.5218043e-10
+  1.2238925e-07 1.3446688e-09 8.0992259e-02 3.5203587e-14 1.1884963e-09]]
+Prediction: airplane
+Prediction: 0
+Prediction: 0.9188024997711182
+ 
+HighConfidence Adversarial Example produced.
+L2 norm difference: 1.49
+L1 norm difference: 144
+Prediction: [[9.1539925e-01 9.9747640e-06 7.3643697e-08 3.8218169e-04 3.0039637e-08
+  1.3073927e-08 2.4031637e-08 8.4208496e-02 4.0880258e-13 9.3617225e-10]]
+Prediction: airplane
+Prediction: 0
+Prediction: 0.9153992533683777
+ 
+HighConfidence Adversarial Example produced.
+L2 norm difference: 1.57
+L1 norm difference: 159
+Prediction: [[9.4708979e-01 5.3131726e-07 7.7123613e-10 2.7372675e-05 3.8710035e-11
+  3.3266265e-09 1.0134286e-09 5.2882314e-02 1.8068375e-14 8.5002436e-11]]
+Prediction: airplane
+Prediction: 0
+Prediction: 0.9470897912979126
+ 
+HighConfidence Adversarial Example produced.
+L2 norm difference: 1.6
+L1 norm difference: 153
+Prediction: [[2.4954299e-04 4.6373593e-08 2.7691280e-10 9.0770650e-01 7.9452535e-11
+  7.9456186e-07 4.3634728e-08 9.2043042e-02 1.3417810e-13 2.6441971e-09]]
+Prediction: cat
+Prediction: 3
+Prediction: 0.9077064990997314
+ 
+HighConfidence Adversarial Example produced.
+L2 norm difference: 1.84
+L1 norm difference: 167
+Prediction: [[5.44638715e-05 8.57298375e-08 1.07415576e-10 9.13372755e-01
+  3.07220603e-11 2.81848952e-05 3.90178245e-09 8.65444914e-02
+  7.74608513e-14 3.63873237e-10]]
+Prediction: cat
+Prediction: 3
+Prediction: 0.9133727550506592
+ 
