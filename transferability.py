@@ -70,12 +70,16 @@ def main(args):
     alexnet = load_model(file_path)
     # model.summary()
 
-    starting_index = 5312
+    starting_index = 2019
 
     resnetTransCount = 0
     alexnetTransCount = 0
     total = 0
-    for i in range(5):
+    i = 0
+    # for i in range(5):
+    while total <= 10:
+        i += 1
+
         print("Testing transferability property for testset[" + str(starting_index + i) + "].")
         image = x_test[starting_index + i]
 
