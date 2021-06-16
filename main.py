@@ -552,7 +552,7 @@ def main(model):
     img.save("./exp/results/" + str({class_labels[np.argmax(y)]})  + "original.png")
 
     collection = []
-    for i in range(5):
+    for i in range(1):
         timestart = timeit.default_timer()
         result, generation = generateImageGA(populationSize=45, generation=1000, inputImage=original, model=model,
                                  y_truth=np.argmax(groundtruth), IMAGEDIMENSION=32)
@@ -598,7 +598,7 @@ def main(model):
     img.save("./exp/parallelResults/" + "original.png")
 
     collection = []
-    for i in range(5):
+    for i in range(1):
         timestart = timeit.default_timer()
 
         result, generation = parallelGA(populationSize=15, generation=1000, inputImage=original, model=model,
@@ -645,7 +645,7 @@ def main(model):
     img.save("./exp/highConfResult/" + "original.png")
 
     collection = []
-    for i in range(5):
+    for i in range(1):
         timestart = timeit.default_timer()
         result, generation = parallelGAhighConf(populationSize=15, generation=1000, inputImage=original, model=model,
                                     y_truth=np.argmax(groundtruth), IMAGEDIMENSION=32)

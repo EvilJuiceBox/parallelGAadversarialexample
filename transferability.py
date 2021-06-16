@@ -4,7 +4,12 @@ import argparse
 import numpy as np
 import os
 from PIL import Image
-import advGenerator
+import AdvGenerator
+import random
+import math
+from Candidate import Candidate
+from AdversarialExample import AdversarialExample
+from operator import itemgetter, attrgetter
 
 
 def main(args):
@@ -51,7 +56,7 @@ def main(args):
     print(f'Output shape: {y_train.shape}')
 
     # load models, target DNN model to attack
-    file_path = 'cifar10_dnn_target.h5'
+    file_path = 'cifar10_dnn.h5'
     print(f'Loading {file_path}...')
     model = load_model(file_path)
 
@@ -60,42 +65,66 @@ def main(args):
     print(f'Loading {file_path}...')
     model1 = load_model(file_path)
 
-    file_path = 'cifar10_dnn.h5'
+    file_path = 'cifar10_dnn_target.h5'
     print(f'Loading {file_path}...')
     alexnet = load_model(file_path)
     # model.summary()
 
-    starting_index = 0
+    starting_index = 5312
 
     resnetTransCount = 0
     alexnetTransCount = 0
     total = 0
-    for i in range(10):
+    for i in range(5):
         print("Testing transferability property for testset[" + str(starting_index + i) + "].")
         image = x_test[starting_index + i]
-        groundtruth = y_test[starting_index + i]
-        basemodelprediction = model.predict(image)
-        testmodelprediction = model1.predict(image)
-        alexprediction = alexnet.predict(image)
 
-        if(groundtruth == basemodelprediction == testmodelprediction == alexprediction):
+        x = np.expand_dims(image, 0)
+        groundtruth = np.argmax(y_test[starting_index + i])
+        basemodelprediction = np.argmax(model.predict(x))
+        testmodelprediction = np.argmax(model1.predict(x))
+        alexprediction = np.argmax(alexnet.predict(x))
+
+        # print(f'groundtruth: {groundtruth}')
+        # print(f'basemodelprediction: {basemodelprediction}')
+        # print(f'testmodelprediction: {testmodelprediction}')
+        # print(f'alexprediction: {alexprediction}')
+
+        if groundtruth == basemodelprediction and groundtruth == testmodelprediction and groundtruth == alexprediction:
+
             # generate adversarial example here.
             total += 1
 
-            advExample, generation = advGenerator.parallelGA(populationSize=15, generation=1000, inputImage=image, model=model,
-                                                             y_truth=np.argmax(groundtruth), IMAGEDIMENSION=32)
-            if model.predict(advExample) == model1.predict(advExample):
+            advExample, generation = AdvGenerator.parallelGA(populationSize=15, generation=1000, inputImage=image, model=model,
+                                                             y_truth=groundtruth, IMAGEDIMENSION=32)
+
+            img = Image.fromarray(np.uint8(advExample.reshape(input_shape) * 255), 'RGB').resize(
+                (128, 128))
+
+            img.show(title="test")
+
+            advExample = np.expand_dims(advExample, 0)
+            print(f'fail prediction: {model.predict(advExample)}')
+
+            if np.argmax(model.predict(advExample)) == np.argmax(model1.predict(advExample)):
                 resnetTransCount += 1
 
-            if model.predict(advExample) == alexnet.predict(advExample):
+            if np.argmax(model.predict(advExample)) == np.argmax(alexnet.predict(advExample)):
                 alexnetTransCount += 1
+
+            print("\nadv example ")
+            print(f'groundtruthMOD: {groundtruth}')
+            print(f'basemodelpredictionMOD: {model.predict(advExample)}')
+            print(f'testmodelpredictionMOD: {model1.predict(advExample)}')
+            print(f'alexpredictionMOD: {alexnet.predict(advExample)}')
+
+        print("\n\n\n")
 
     print(f'Total number of images compared: {total}')
     print(f'Number of adversarial examples transferred to second resnet: {resnetTransCount}')
     print(f'Percentage: {resnetTransCount/total}')
     print(f'Number of adversarial examples transferred : {alexnetTransCount}')
     print(f'Percentage: {alexnetTransCount/total}')
-
 
 
 if __name__ == '__main__':

@@ -163,7 +163,7 @@ def main(args):
     print(f'Accuracy: {result[1]:0.3f}')
 
     # save model
-    file_path = 'cifar10_dnn.h5'
+    file_path = 'cifar10_dnn_target.h5'
     print(f'Saving {file_path}...')
     model.save(file_path)
 
