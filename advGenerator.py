@@ -36,11 +36,11 @@ def randomPixelMutate(image, x, y):
     # print("Original:" + str(value))
 
     if random.randint(0, 1) == 0:
-        value = value + (255 * 0.1)  # increase pixel value by 10 percent
+        value = value + (255 * 0.05)  # increase pixel value by 10 percent
         if value > 255:
             value = 255
     else:
-        value = value - (255 * 0.1)  # decrease value by 10 percent
+        value = value - (255 * 0.05)  # decrease value by 10 percent
         if value < 0:
             value = 0
 

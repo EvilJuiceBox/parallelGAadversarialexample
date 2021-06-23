@@ -77,7 +77,7 @@ def main(args):
     total = 0
     i = 0
     # for i in range(5):
-    while total <= 10:
+    while total <= 30:
         i += 1
 
         print("Testing transferability property for testset[" + str(starting_index + i) + "].")
@@ -99,7 +99,7 @@ def main(args):
             # generate adversarial example here.
             total += 1
 
-            advExample, generation = AdvGenerator.parallelGA(populationSize=15, generation=1000, inputImage=image, model=model,
+            advExample, generation = AdvGenerator.parallelGAhighConf(populationSize=15, generation=1000, inputImage=image, model=model,
                                                              y_truth=groundtruth, IMAGEDIMENSION=32)
 
             img = Image.fromarray(np.uint8(advExample.reshape(input_shape) * 255), 'RGB').resize(
