@@ -11,6 +11,7 @@ import targetedGeneticAlgorithm
 import coursegrained_ga
 import high_conf_cgga
 import parallel_ga
+import finegrained_ga
 from DeepNeuralNetwork import KumarDNN, DeepNeuralNetworkUtil
 from ensembleMain import Result, saveResults
 
@@ -61,10 +62,11 @@ def calculate_perturbation(filepath, resultfolderpath, image_index=0):
     y_train = to_categorical(y_train, num_classes)
     y_test = to_categorical(y_test, num_classes)
     print(f'Output shape: {y_train.shape}')
-    # cgGA = coursegrained_ga.CourseGrainedGeneticAlgorithm()
-    # hgGA = high_conf_cgga.HighConfidenceGeneticAlgorithm()
-    # tGA = targetedGeneticAlgorithm.TargetedGeneticAlgorithm()
+    cgGA = coursegrained_ga.CourseGrainedGeneticAlgorithm()
+    hgGA = high_conf_cgga.HighConfidenceGeneticAlgorithm()
+    tGA = targetedGeneticAlgorithm.TargetedGeneticAlgorithm()
     pGA = parallel_ga.ParallelAlgorithm()
+    fgGA = finegrained_ga.FineGrainedGeneticAlgorithm()
 
     image = x_test[image_index]
     ground_truth = y_test[image_index]
@@ -80,17 +82,21 @@ def calculate_perturbation(filepath, resultfolderpath, image_index=0):
 
     print(f"max entry: {np.amax(image)}")
     print(f"min entry: {np.amin(image)}")
-    # advImage, generationCount = cgGA.generate(populationSize=16, generation=10000,
+    # advImage, generationCount, queryCount = cgGA.generate(populationSize=16, generation=10000,
     #                                           inputImage=image, model=model,
     #                                           y_truth=np.argmax(ground_truth), IMAGEDIMENSION=32)
 
-    advImage, generationCount = pGA.generate(populationSize=16, generation=10000,
-                                              inputImage=image, model=model,
-                                              y_truth=np.argmax(ground_truth), IMAGEDIMENSION=32)
+    # advImage, generationCount = pGA.generate(populationSize=16, generation=10000,
+    #                                           inputImage=image, model=model,
+    #                                           y_truth=np.argmax(ground_truth), IMAGEDIMENSION=32)
 
     # advImage, generationCount = tGA.generate(populationSize=16, generation=10000,
     #                                           inputImage=image, model=model,
     #                                           target=4, IMAGEDIMENSION=32)
+
+    advImage, generationCount, queryCount = fgGA.generate(populationSize=4, grid_size=5, overlap_region="L5", generation=10000,
+                                             inputImage=image, model=model,
+                                             y_truth=np.argmax(ground_truth), IMAGEDIMENSION=32)
 
     if generationCount == -1:
         print("Failed to generate adversarial example")
@@ -104,6 +110,7 @@ def calculate_perturbation(filepath, resultfolderpath, image_index=0):
     print(
         f"The resulting predicted label is {DeepNeuralNetworkUtil.getClassLabel(failedpred)} with a confidence of {failedpred[0][np.argmax(failedpred)]}")
 
+    print(f"The number of querys took to generate the image is {queryCount}")
 
     perturbation_layer = DeepNeuralNetworkUtil.inverseStandardisation(advImage) - DeepNeuralNetworkUtil.inverseStandardisation(image)
     perturbation_layer = ((perturbation_layer / 256) * 128) + 128
@@ -115,7 +122,7 @@ def calculate_perturbation(filepath, resultfolderpath, image_index=0):
 
 
 def main(args):
-    calculate_perturbation("resnet20.h5", "pga_test", image_index=1001)
+    calculate_perturbation("resnet20.h5", "fgGA_test", image_index=1001)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

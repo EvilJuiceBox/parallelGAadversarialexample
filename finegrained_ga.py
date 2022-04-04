@@ -11,6 +11,8 @@ class FineGrainedGeneticAlgorithm(GeneticAlgorithm):
         tournamentSize = 3  # tournament size
         grid = []
 
+        queryCount = 0
+
         # random init for each island
         for i in range(grid_size):  # create n x n grid of populations
             inner_grid = []
@@ -24,9 +26,10 @@ class FineGrainedGeneticAlgorithm(GeneticAlgorithm):
         overlapped_population = []
         for i in range(generation):
             if overlap_region == "L5":
-                overlapped_population = getL5Population(grid)
+                overlapped_population = self.getL5Population(grid)
             if overlap_region == "C9":
-                overlapped_population = getC9Population(grid)
+                # overlapped_population = getC9Population(grid)
+                pass
 
             for rows in range(grid_size):
                 for z in range(grid_size):
@@ -61,11 +64,12 @@ class FineGrainedGeneticAlgorithm(GeneticAlgorithm):
 
                     # cull population down to original size, and proceed to next gen.
                     tempPopulation = self.calculatePopulationFitness(tempPopulation, model, y_truth)
+                    queryCount += len(tempPopulation)
                     tempPopulation.sort(key=attrgetter("_fitness"), reverse=True)
 
                     if tempPopulation[0].getFitness() == float("inf"):
                         print("The solution was found at generation: " + str(i))
-                        return tempPopulation[0].getImage(), i
+                        return tempPopulation[0].getImage(), i, queryCount
 
                     grid[rows][z] = self.survivorSelection(tempPopulation, populationSize, 3, model,
                                                    y_truth)  # elitism of 3 per round, chosen arbitrary
@@ -77,7 +81,7 @@ class FineGrainedGeneticAlgorithm(GeneticAlgorithm):
                     grid[grid_size-1][grid_size - 1][0].getFitness()))
             # print("END OF GENERATION: " + str(i))
 
-        return self.getBestMember(grid[0]).getImage(), -1
+        return self.getBestMember(grid[0]).getImage(), -1, queryCount
 
     def getL5Population(self, grid):
         overlapping_population = copy.deepcopy(grid)
