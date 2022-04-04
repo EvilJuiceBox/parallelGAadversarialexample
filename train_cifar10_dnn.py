@@ -17,7 +17,7 @@ def main(args):
 
     from keras.callbacks import LearningRateScheduler, ReduceLROnPlateau
     from keras.datasets import cifar10
-    from keras.layers import Add, Activation, Conv2D, Dense, GlobalAveragePooling2D, Input
+    from keras.layers import Add, Activation, Conv2D, Dense, GlobalAveragePooling2D, Input, Dropout
     from keras.models import Model
     from keras.optimizers import Adam
     from keras.regularizers import l2
@@ -42,8 +42,14 @@ def main(args):
     (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 
     # scale images from 0-1 to 0-255 and add channel dimension
-    x_train = np.float32(x_train) / 255
-    x_test = np.float32(x_test) / 255
+    # x_train = np.float32(x_train) / 255
+    # x_test = np.float32(x_test) / 255
+    # z-score
+    mean = np.mean(x_train, axis=(0, 1, 2, 3))
+    std = np.std(x_train, axis=(0, 1, 2, 3))
+    x_train = (x_train - mean) / (std + 1e-7)
+    x_test = (x_test - mean) / (std + 1e-7)
+
     print(f'Input shape: {x_train.shape}')
 
     # convert label into a one-hot encoding
@@ -77,6 +83,8 @@ def main(args):
     x = Add()([x, x_branch])
     x = Activation('relu')(x)
 
+    x = Dropout(0.2)(x)
+
     # construct resnet-20 model: stage 2, block 1
     x_branch = x
     x_branch = _conv2d_block(32, activation='relu', kernel_size=3, strides=2)(x_branch)
@@ -98,6 +106,9 @@ def main(args):
     x_branch = _conv2d_block(32, activation=None, kernel_size=3, strides=1)(x_branch)
     x = Add()([x, x_branch])
     x = Activation('relu')(x)
+
+
+    x = Dropout(0.3)(x)
 
     # construct resnet-20 model: stage 3, block 1
     x_branch = x
@@ -121,6 +132,8 @@ def main(args):
     x = Add()([x, x_branch])
     x = Activation('relu')(x)
 
+    x = Dropout(0.4)(x)
+
     # construct resnet-20 model: finalize
     x = GlobalAveragePooling2D()(x)
     x = Dense(num_classes, kernel_initializer='he_normal')(x)
@@ -129,7 +142,7 @@ def main(args):
     model.compile(
         loss='categorical_crossentropy',
         optimizer=Adam(lr=0.001),
-        metrics=['acc'],
+        metrics=['accuracy'],
     )
     model.summary()
 
@@ -154,16 +167,37 @@ def main(args):
 
     # train model
     print('Training...')
-    model.fit(x_train, y_train, batch_size=128, epochs=100, callbacks=[lr_plateau, lr_scheduler])
+    # changing epoch from 100-200, batch size from 128 - 256
+    #original paper" 256
+
+    # 128, 200 epoch
+    # loss: 1.438
+    # accu: 0.799
+
+    # 64, 125 epoch
+    # Loss: 1.150
+    # Accuracy: 0.824
+
+    # standardised, 64, 125
+    # Loss: 1.141
+    # Accuracy: 0.827
+
+    # 32, 200
+
+
+    #Loss:     0.711
+    # Accuracy: 0.884
+
+    model.fit(x_train, y_train, batch_size=64, epochs=125, callbacks=[lr_plateau, lr_scheduler])
 
     # evaluate model
-    print('Evaluating...')
+    print('Evaluating against test data...')
     result = model.evaluate(x_test, y_test, verbose=0)
     print(f'Loss:     {result[0]:0.3f}')
     print(f'Accuracy: {result[1]:0.3f}')
 
     # save model
-    file_path = 'cifar10_dnn_target.h5'
+    file_path = 'cifar10_dnn_12272021.h5'
     print(f'Saving {file_path}...')
     model.save(file_path)
 

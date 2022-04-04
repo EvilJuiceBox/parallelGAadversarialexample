@@ -1,0 +1,3 @@
+This experiment is ran with five homogenous dnns, each of the dnns are trained on a fifth of the training data.
+
+The single dnn model is ran with 20 individuals instead of 7, accidentally.

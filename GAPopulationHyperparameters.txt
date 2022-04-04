@@ -1,0 +1,11 @@
+For pGA run with population size 4, the avg generation is 79.0, and the avg time is 18.950824332237243
+For pGA run with population size 5, the avg generation is 79.1, and the avg time is 28.031242632865904
+For pGA run with population size 6, the avg generation is 76.3, and the avg time is 28.947888231277467
+For pGA run with population size 7, the avg generation is 75.6, and the avg time is 34.93207941055298
+For pGA run with population size 8, the avg generation is 75.3, and the avg time is 42.29943199157715
+For pGA run with population size 9, the avg generation is 74.1, and the avg time is 59.01614987850189
+For pGA run with population size 10, the avg generation is 77.0, and the avg time is 77.95500960350037
+For pGA run with population size 11, the avg generation is 72.8, and the avg time is 82.754825091362
+For pGA run with population size 12, the avg generation is 74.5, and the avg time is 88.56297070980072
+For pGA run with population size 13, the avg generation is 69.7, and the avg time is 100.33345882892608
+For pGA run with population size 14, the avg generation is 70.8, and the avg time is 117.34017083644866

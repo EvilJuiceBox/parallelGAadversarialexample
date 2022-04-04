@@ -1,0 +1,3724 @@
+Loading homogenous5_08142021/dnn_ensemble_target_0.h5...
+Loading homogenous5_08142021/dnn_ensemble_target_1.h5...
+Loading homogenous5_08142021/dnn_ensemble_target_2.h5...
+Loading homogenous5_08142021/dnn_ensemble_target_3.h5...
+Loading homogenous5_08142021/dnn_ensemble_target_4.h5...
+Loading ninetydnn.h5...
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 32, 32, 32)        896       
+_________________________________________________________________
+activation_1 (Activation)    (None, 32, 32, 32)        0         
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 32, 32, 32)        128       
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 32, 32, 32)        9248      
+_________________________________________________________________
+activation_2 (Activation)    (None, 32, 32, 32)        0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 32, 32, 32)        128       
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 16, 16, 32)        0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 16, 16, 32)        0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 16, 16, 64)        18496     
+_________________________________________________________________
+activation_3 (Activation)    (None, 16, 16, 64)        0         
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 16, 16, 64)        256       
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 16, 16, 64)        36928     
+_________________________________________________________________
+activation_4 (Activation)    (None, 16, 16, 64)        0         
+_________________________________________________________________
+batch_normalization_4 (Batch (None, 16, 16, 64)        256       
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 8, 8, 64)          0         
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 8, 8, 64)          0         
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 8, 8, 128)         73856     
+_________________________________________________________________
+activation_5 (Activation)    (None, 8, 8, 128)         0         
+_________________________________________________________________
+batch_normalization_5 (Batch (None, 8, 8, 128)         512       
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 8, 8, 128)         147584    
+_________________________________________________________________
+activation_6 (Activation)    (None, 8, 8, 128)         0         
+_________________________________________________________________
+batch_normalization_6 (Batch (None, 8, 8, 128)         512       
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 4, 4, 128)         0         
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 4, 4, 128)         0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 2048)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 10)                20490     
+=================================================================
+Total params: 309,290
+Trainable params: 308,394
+Non-trainable params: 896
+_________________________________________________________________
+Input shape: (50000, 32, 32, 3)
+Output shape: (50000, 10)
+Generating an adversarial example for test set[1001].
+groundtruth: 0
+basemodelprediction: 8
+ensemblemodelprediction: 0
+
+
+
+---------------------------------------------
+Generating an adversarial example for test set[1002].
+groundtruth: 8
+basemodelprediction: 8
+ensemblemodelprediction: 8
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.93123215; Worse performing member: 0.93123215
+The solution was found at generation: 38
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.51354074; Worse performing member: 0.50968456
+The solution was found at generation: 32
+
+	SingleModelTime: 19.413766145706177
+	EnsembleModelTime: 70.40923047065735
+
+./singleDNN08222021/modelResult_test1002truck.png
+Ground truth: ship
+fail prediction for resnet: [[4.9311216e-03 5.6673810e-03 1.1439730e-04 3.2582635e-04 3.1948395e-05
+  6.7648944e-05 1.7818372e-03 3.9723483e-04 4.7654092e-01 5.1014167e-01]]
+Generations took to generate model: 38
+L1 norm difference: 33
+L2 norm difference: 2.23606797749979
+ 
+./singleDNN08222021/ensembleResult_test1002truck.png
+fail prediction for ensemble: [[0.03251521 0.11288111 0.00886691 0.00464366 0.0129768  0.00511323
+  0.01010193 0.0011354  0.40347633 0.40828943]]
+Generations took to generate model: 32
+L1 norm difference: 27
+L2 norm difference: 3.1622776601683795
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+
+---------------------------------------------
+Generating an adversarial example for test set[1003].
+groundtruth: 4
+basemodelprediction: 4
+ensemblemodelprediction: 4
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9992648; Worse performing member: 0.99927324
+End of generation: 100; Best performing member: 0.97388035; Worse performing member: 0.9745559
+End of generation: 200; Best performing member: 0.75248075; Worse performing member: 0.7713923
+The solution was found at generation: 258
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9990516; Worse performing member: 0.99904364
+End of generation: 100; Best performing member: 0.8586277; Worse performing member: 0.8869356
+End of generation: 200; Best performing member: 0.76966584; Worse performing member: 0.77938277
+End of generation: 300; Best performing member: 0.5968575; Worse performing member: 0.5970557
+The solution was found at generation: 395
+
+	SingleModelTime: 149.05427193641663
+	EnsembleModelTime: 1106.091928243637
+
+./singleDNN08222021/modelResult_test1003dog.png
+Ground truth: deer
+fail prediction for resnet: [[1.7036153e-05 3.2629928e-06 1.5683059e-04 2.7641291e-02 4.5490086e-01
+  4.6945113e-01 1.8415843e-04 4.7633234e-02 1.5902513e-06 1.0639255e-05]]
+Generations took to generate model: 258
+L1 norm difference: 189
+L2 norm difference: 6.244997998398398
+ 
+./singleDNN08222021/ensembleResult_test1003frog.png
+fail prediction for ensemble: [[5.2704639e-08 6.8126687e-09 1.5579280e-04 2.3149040e-03 4.9686855e-01
+  3.6240839e-03 4.9701852e-01 9.0849881e-06 1.7828090e-06 7.1597633e-06]]
+Generations took to generate model: 395
+L1 norm difference: 268
+L2 norm difference: 7.615773105863909
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+
+---------------------------------------------
+Generating an adversarial example for test set[1004].
+groundtruth: 8
+basemodelprediction: 8
+ensemblemodelprediction: 8
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999894; Worse performing member: 0.99998856
+End of generation: 100; Best performing member: 0.97680366; Worse performing member: 0.992784
+The solution was found at generation: 177
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9977542; Worse performing member: 0.9981226
+End of generation: 100; Best performing member: 0.7946507; Worse performing member: 0.8188899
+The solution was found at generation: 182
+
+	SingleModelTime: 79.03757667541504
+	EnsembleModelTime: 400.03194761276245
+
+./singleDNN08222021/modelResult_test1004airplane.png
+Ground truth: ship
+fail prediction for resnet: [[4.95992482e-01 1.02497917e-03 8.93297419e-03 9.46895336e-04
+  4.13425762e-04 1.19918106e-04 2.63988227e-03 4.65025514e-05
+  4.88390386e-01 1.49256503e-03]]
+Generations took to generate model: 177
+L1 norm difference: 118
+L2 norm difference: 3.7416573867739413
+ 
+./singleDNN08222021/ensembleResult_test1004airplane.png
+fail prediction for ensemble: [[4.9982485e-01 8.5632179e-05 7.0804512e-05 2.1799849e-06 2.2940565e-06
+  3.4937224e-07 4.3819993e-04 2.6301098e-08 4.9954376e-01 3.1888128e-05]]
+Generations took to generate model: 182
+L1 norm difference: 113
+L2 norm difference: 3.7416573867739413
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+
+---------------------------------------------
+Generating an adversarial example for test set[1005].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9960479; Worse performing member: 0.9960979
+The solution was found at generation: 91
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9548074; Worse performing member: 0.9567377
+End of generation: 100; Best performing member: 0.55507296; Worse performing member: 0.54522645
+The solution was found at generation: 111
+
+	SingleModelTime: 40.06805634498596
+	EnsembleModelTime: 240.36216759681702
+
+./singleDNN08222021/modelResult_test1005truck.png
+Ground truth: automobile
+fail prediction for resnet: [[3.4020033e-08 4.0592533e-01 3.6098866e-10 2.6361624e-10 2.5773991e-11
+  3.8075457e-10 3.4473153e-08 4.5961528e-09 1.2251290e-06 5.9407341e-01]]
+Generations took to generate model: 91
+L1 norm difference: 65
+L2 norm difference: 2.449489742783178
+ 
+./singleDNN08222021/ensembleResult_test1005truck.png
+fail prediction for ensemble: [[5.6711640e-09 4.9944711e-01 2.1804667e-12 8.1148022e-12 2.5994146e-13
+  1.6799372e-12 4.9381235e-08 1.0540713e-10 2.1574956e-06 5.0055075e-01]]
+Generations took to generate model: 111
+L1 norm difference: 94
+L2 norm difference: 4.0
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+
+---------------------------------------------
+Generating an adversarial example for test set[1006].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9965636; Worse performing member: 0.99673945
+End of generation: 100; Best performing member: 0.8101077; Worse performing member: 0.81175256
+The solution was found at generation: 137
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9986717; Worse performing member: 0.998701
+End of generation: 100; Best performing member: 0.8918265; Worse performing member: 0.8915817
+End of generation: 200; Best performing member: 0.7887641; Worse performing member: 0.7861083
+End of generation: 300; Best performing member: 0.6060957; Worse performing member: 0.60553735
+End of generation: 400; Best performing member: 0.45775324; Worse performing member: 0.45169505
+The solution was found at generation: 414
+
+	SingleModelTime: 68.70748972892761
+	EnsembleModelTime: 1019.8218069076538
+
+./singleDNN08222021/modelResult_test1006truck.png
+Ground truth: automobile
+fail prediction for resnet: [[8.4769810e-05 4.9559671e-01 1.9993497e-07 9.9732894e-08 8.4795388e-08
+  2.8840716e-08 1.1794854e-04 1.0649117e-08 1.0427329e-03 5.0315738e-01]]
+Generations took to generate model: 137
+L1 norm difference: 107
+L2 norm difference: 4.69041575982343
+ 
+./singleDNN08222021/ensembleResult_test1006frog.png
+fail prediction for ensemble: [[6.8513968e-05 4.2269737e-01 5.0401436e-03 7.1874720e-06 5.4364768e-06
+  2.5819065e-07 4.3334571e-01 6.5372041e-09 4.4210412e-02 9.4625004e-02]]
+Generations took to generate model: 414
+L1 norm difference: 295
+L2 norm difference: 7.0
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+
+---------------------------------------------
+Generating an adversarial example for test set[1007].
+groundtruth: 8
+basemodelprediction: 8
+ensemblemodelprediction: 8
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.5638177; Worse performing member: 0.550107
+The solution was found at generation: 4
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.8130396; Worse performing member: 0.8110754
+End of generation: 100; Best performing member: 0.5507587; Worse performing member: 0.5227332
+The solution was found at generation: 126
+
+	SingleModelTime: 2.1323208808898926
+	EnsembleModelTime: 266.47516441345215
+
+./singleDNN08222021/modelResult_test1007airplane.png
+Ground truth: ship
+fail prediction for resnet: [[5.0240582e-01 1.5966527e-04 2.2015577e-04 7.3123833e-06 9.8865894e-06
+  3.6670642e-06 3.8092976e-06 1.6506427e-05 4.9705532e-01 1.1779405e-04]]
+Generations took to generate model: 4
+L1 norm difference: 6
+L2 norm difference: 1.0
+ 
+./singleDNN08222021/ensembleResult_test1007airplane.png
+fail prediction for ensemble: [[4.89114285e-01 7.83365034e-03 1.57259740e-02 1.06385254e-04
+  7.48413440e-04 2.08688434e-05 1.15044613e-03 1.07913394e-04
+  4.84632492e-01 5.59579814e-04]]
+Generations took to generate model: 126
+L1 norm difference: 96
+L2 norm difference: 2.6457513110645907
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+
+---------------------------------------------
+Generating an adversarial example for test set[1008].
+groundtruth: 9
+basemodelprediction: 9
+ensemblemodelprediction: 9
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.7561641; Worse performing member: 0.7564486
+The solution was found at generation: 42
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.54905057; Worse performing member: 0.5471741
+The solution was found at generation: 19
+
+	SingleModelTime: 18.70992660522461
+	EnsembleModelTime: 41.007307291030884
+
+./singleDNN08222021/modelResult_test1008automobile.png
+Ground truth: truck
+fail prediction for resnet: [[0.03256307 0.42814472 0.01242068 0.00907606 0.00343126 0.00192891
+  0.01324825 0.03944395 0.03912035 0.4206227 ]]
+Generations took to generate model: 42
+L1 norm difference: 38
+L2 norm difference: 0.0
+ 
+./singleDNN08222021/ensembleResult_test1008automobile.png
+fail prediction for ensemble: [[4.4088047e-02 4.1908163e-01 4.4370345e-03 1.6157806e-03 1.0517562e-03
+  1.1841293e-04 1.3517497e-02 8.0182934e-03 9.3509436e-02 4.1456214e-01]]
+Generations took to generate model: 19
+L1 norm difference: 21
+L2 norm difference: 1.7320508075688772
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+
+---------------------------------------------
+Generating an adversarial example for test set[1009].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.8961614; Worse performing member: 0.8975059
+End of generation: 100; Best performing member: 0.5348917; Worse performing member: 0.51057756
+The solution was found at generation: 112
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99953043; Worse performing member: 0.9995333
+End of generation: 100; Best performing member: 0.9889327; Worse performing member: 0.98773277
+End of generation: 200; Best performing member: 0.8635046; Worse performing member: 0.85954845
+End of generation: 300; Best performing member: 0.8043822; Worse performing member: 0.8043318
+End of generation: 400; Best performing member: 0.7983878; Worse performing member: 0.79859227
+End of generation: 500; Best performing member: 0.7678063; Worse performing member: 0.76718843
+End of generation: 600; Best performing member: 0.65844387; Worse performing member: 0.65736973
+End of generation: 700; Best performing member: 0.6064172; Worse performing member: 0.6067632
+End of generation: 800; Best performing member: 0.5984044; Worse performing member: 0.5982031
+The solution was found at generation: 886
+
+	SingleModelTime: 61.240229845047
+	EnsembleModelTime: 1718.7241606712341
+
+./singleDNN08222021/modelResult_test1009cat.png
+Ground truth: frog
+fail prediction for resnet: [[0.00934471 0.00489116 0.02275947 0.43412745 0.01804094 0.00584954
+  0.432883   0.05308416 0.01593344 0.00308601]]
+Generations took to generate model: 112
+L1 norm difference: 84
+L2 norm difference: 3.872983346207417
+ 
+./singleDNN08222021/ensembleResult_test1009horse.png
+fail prediction for ensemble: [[1.9311914e-04 7.0841922e-03 6.7970841e-06 2.4939692e-04 1.5663446e-03
+  2.0518399e-05 4.8443618e-01 4.8534137e-01 1.9392163e-02 1.7099421e-03]]
+Generations took to generate model: 886
+L1 norm difference: 509
+L2 norm difference: 10.908712114635714
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+
+---------------------------------------------
+Generating an adversarial example for test set[1010].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99951077; Worse performing member: 0.9995441
+End of generation: 100; Best performing member: 0.985691; Worse performing member: 0.98194695
+End of generation: 200; Best performing member: 0.8019448; Worse performing member: 0.8114141
+The solution was found at generation: 265
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99968415; Worse performing member: 0.99966156
+End of generation: 100; Best performing member: 0.99803144; Worse performing member: 0.99808997
+End of generation: 200; Best performing member: 0.9912238; Worse performing member: 0.99102724
+End of generation: 300; Best performing member: 0.9754764; Worse performing member: 0.97331107
+End of generation: 400; Best performing member: 0.9416068; Worse performing member: 0.9359485
+End of generation: 500; Best performing member: 0.8824404; Worse performing member: 0.8838603
+End of generation: 600; Best performing member: 0.844298; Worse performing member: 0.8425741
+End of generation: 700; Best performing member: 0.8166874; Worse performing member: 0.81576806
+End of generation: 800; Best performing member: 0.8053626; Worse performing member: 0.8051154
+End of generation: 900; Best performing member: 0.8010621; Worse performing member: 0.80133915
+
+	SingleModelTime: 103.76268672943115
+	EnsembleModelTime: 1882.4422407150269
+
+./singleDNN08222021/modelResult_test1010bird.png
+Ground truth: airplane
+fail prediction for resnet: [[4.9238801e-01 2.5492963e-07 5.0689054e-01 7.3582465e-05 2.7162000e-04
+  1.7992526e-05 3.4237158e-04 2.5901320e-06 1.2899593e-05 7.1652302e-08]]
+Generations took to generate model: 265
+L1 norm difference: 183
+L2 norm difference: 5.0990195135927845
+ 
+./singleDNN08222021/ensembleResult_test1010airplane.png
+fail prediction for ensemble: [[7.8093117e-01 4.6379252e-08 2.1711627e-01 3.6344391e-05 1.3780690e-04
+  6.3946908e-07 1.7361740e-03 1.2066012e-07 4.1442432e-05 6.2650251e-08]]
+Generations took to generate model: 1000
+L1 norm difference: 405
+L2 norm difference: 7.681145747868608
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+
+---------------------------------------------
+Generating an adversarial example for test set[1011].
+groundtruth: 8
+basemodelprediction: 8
+ensemblemodelprediction: 8
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999919; Worse performing member: 0.9999919
+End of generation: 100; Best performing member: 0.8865707; Worse performing member: 0.87151
+The solution was found at generation: 120
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999908; Worse performing member: 0.9999897
+End of generation: 100; Best performing member: 0.9875196; Worse performing member: 0.98580945
+End of generation: 200; Best performing member: 0.8048347; Worse performing member: 0.8018856
+End of generation: 300; Best performing member: 0.59029025; Worse performing member: 0.5851268
+The solution was found at generation: 332
+
+	SingleModelTime: 46.88450360298157
+	EnsembleModelTime: 626.1988959312439
+
+./singleDNN08222021/modelResult_test1011airplane.png
+Ground truth: ship
+fail prediction for resnet: [[5.1371175e-01 1.2176751e-07 7.2391326e-06 3.0920680e-06 6.0826886e-05
+  3.5677687e-07 7.1290651e-07 1.4189006e-07 4.8621485e-01 8.8396735e-07]]
+Generations took to generate model: 120
+L1 norm difference: 77
+L2 norm difference: 3.1622776601683795
+ 
+./singleDNN08222021/ensembleResult_test1011airplane.png
+fail prediction for ensemble: [[4.9497002e-01 2.4387776e-07 3.9434861e-04 2.7764563e-05 1.5838271e-02
+  3.5751775e-06 1.0073299e-04 3.7827056e-06 4.8865947e-01 1.8017333e-06]]
+Generations took to generate model: 332
+L1 norm difference: 213
+L2 norm difference: 5.916079783099616
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+
+---------------------------------------------
+Generating an adversarial example for test set[1012].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9900239; Worse performing member: 0.9898991
+End of generation: 100; Best performing member: 0.8128316; Worse performing member: 0.82588685
+The solution was found at generation: 195
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.8166113; Worse performing member: 0.81714696
+End of generation: 100; Best performing member: 0.64591765; Worse performing member: 0.6557646
+End of generation: 200; Best performing member: 0.47419348; Worse performing member: 0.47627822
+End of generation: 300; Best performing member: 0.32438585; Worse performing member: 0.32972184
+The solution was found at generation: 359
+
+	SingleModelTime: 76.18490409851074
+	EnsembleModelTime: 675.4853127002716
+
+./singleDNN08222021/modelResult_test1012airplane.png
+Ground truth: frog
+fail prediction for resnet: [[0.27202374 0.14945199 0.03585821 0.04185123 0.00109966 0.06048544
+  0.27155173 0.01298285 0.08011606 0.07457908]]
+Generations took to generate model: 195
+L1 norm difference: 147
+L2 norm difference: 3.1622776601683795
+ 
+./singleDNN08222021/ensembleResult_test1012dog.png
+fail prediction for ensemble: [[2.0162325e-01 1.6437519e-02 1.5170404e-01 2.1663183e-02 1.8302331e-02
+  2.5128713e-01 2.5097153e-01 8.4931798e-02 6.4366366e-05 3.0148488e-03]]
+Generations took to generate model: 359
+L1 norm difference: 256
+L2 norm difference: 5.196152422706632
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+
+---------------------------------------------
+Generating an adversarial example for test set[1013].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 100; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 200; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 300; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 400; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 500; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 600; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 700; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 800; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 900; Best performing member: 1.0; Worse performing member: 1.0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999944; Worse performing member: 0.9999946
+End of generation: 100; Best performing member: 0.99970376; Worse performing member: 0.9997679
+End of generation: 200; Best performing member: 0.9775875; Worse performing member: 0.9800623
+End of generation: 300; Best performing member: 0.8423139; Worse performing member: 0.8398774
+End of generation: 400; Best performing member: 0.80257624; Worse performing member: 0.80264807
+End of generation: 500; Best performing member: 0.8001005; Worse performing member: 0.80016696
+End of generation: 600; Best performing member: 0.7995882; Worse performing member: 0.79978055
+End of generation: 700; Best performing member: 0.78571624; Worse performing member: 0.78576684
+End of generation: 800; Best performing member: 0.6398619; Worse performing member: 0.63934475
+End of generation: 900; Best performing member: 0.49662298; Worse performing member: 0.48746356
+The solution was found at generation: 950
+
+	SingleModelTime: 389.33381152153015
+	EnsembleModelTime: 1787.809068441391
+
+./singleDNN08222021/modelResult_test1013automobile.png
+Ground truth: automobile
+fail prediction for resnet: [[6.9488873e-11 1.0000000e+00 5.6496986e-14 1.3712896e-12 1.4299505e-14
+  3.1831134e-15 6.0657179e-10 2.3231380e-14 3.5461536e-11 4.1837533e-09]]
+Generations took to generate model: 1000
+L1 norm difference: 0
+L2 norm difference: 0.0
+ 
+./singleDNN08222021/ensembleResult_test1013truck.png
+fail prediction for ensemble: [[3.89729324e-03 4.23228443e-01 2.43589113e-07 4.69325350e-05
+  6.18564218e-06 4.07883988e-07 2.94633918e-02 7.22065943e-06
+  1.20102584e-01 4.23247188e-01]]
+Generations took to generate model: 950
+L1 norm difference: 458
+L2 norm difference: 14.866068747318506
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+
+---------------------------------------------
+Generating an adversarial example for test set[1014].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99310803; Worse performing member: 0.9921187
+End of generation: 100; Best performing member: 0.5104098; Worse performing member: 0.45815533
+The solution was found at generation: 102
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.79541564; Worse performing member: 0.80014026
+The solution was found at generation: 98
+
+	SingleModelTime: 39.92519211769104
+	EnsembleModelTime: 184.28154921531677
+
+./singleDNN08222021/modelResult_test1014frog.png
+Ground truth: cat
+fail prediction for resnet: [[2.8551632e-04 4.1884914e-04 4.1944399e-03 3.6221871e-01 1.5319353e-01
+  8.0391511e-02 3.7359738e-01 1.7028200e-03 2.6628014e-04 2.3730937e-02]]
+Generations took to generate model: 102
+L1 norm difference: 91
+L2 norm difference: 3.1622776601683795
+ 
+./singleDNN08222021/ensembleResult_test1014frog.png
+fail prediction for ensemble: [[3.3920124e-04 4.1803881e-04 1.6174123e-01 3.3310723e-01 6.4931877e-02
+  8.9254603e-02 3.3979481e-01 2.9293032e-04 1.1045757e-04 1.0009616e-02]]
+Generations took to generate model: 98
+L1 norm difference: 87
+L2 norm difference: 3.872983346207417
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+
+---------------------------------------------
+Generating an adversarial example for test set[1015].
+groundtruth: 4
+basemodelprediction: 4
+ensemblemodelprediction: 4
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 100; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 200; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 300; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 400; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 500; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 600; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 700; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 800; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 900; Best performing member: 1.0; Worse performing member: 1.0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999647; Worse performing member: 0.99996597
+End of generation: 100; Best performing member: 0.9991461; Worse performing member: 0.99935067
+End of generation: 200; Best performing member: 0.97941434; Worse performing member: 0.97886693
+End of generation: 300; Best performing member: 0.8081107; Worse performing member: 0.80986995
+End of generation: 400; Best performing member: 0.76145643; Worse performing member: 0.7665319
+End of generation: 500; Best performing member: 0.615813; Worse performing member: 0.6007789
+The solution was found at generation: 548
+
+	SingleModelTime: 389.338338136673
+	EnsembleModelTime: 1030.1697311401367
+
+./singleDNN08222021/modelResult_test1015deer.png
+Ground truth: deer
+fail prediction for resnet: [[1.0199690e-10 4.1513255e-11 8.1898721e-10 1.3995948e-09 1.0000000e+00
+  8.0367368e-10 1.9007913e-09 1.1598927e-10 1.6902263e-11 1.7733541e-10]]
+Generations took to generate model: 1000
+L1 norm difference: 0
+L2 norm difference: 0.0
+ 
+./singleDNN08222021/ensembleResult_test1015frog.png
+fail prediction for ensemble: [[1.48659237e-04 3.85791645e-05 1.40630035e-02 8.56260862e-03
+  4.84288037e-01 4.32478264e-04 4.86055672e-01 1.04718703e-04
+  1.26411993e-04 6.17985567e-03]]
+Generations took to generate model: 548
+L1 norm difference: 381
+L2 norm difference: 7.745966692414834
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+
+---------------------------------------------
+Generating an adversarial example for test set[1016].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9125527; Worse performing member: 0.9139025
+The solution was found at generation: 56
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9496562; Worse performing member: 0.9495815
+The solution was found at generation: 81
+
+	SingleModelTime: 22.073693990707397
+	EnsembleModelTime: 153.55099725723267
+
+./singleDNN08222021/modelResult_test1016truck.png
+Ground truth: automobile
+fail prediction for resnet: [[4.5011698e-06 4.9322453e-01 1.0296919e-06 3.3477111e-06 5.7483140e-07
+  2.7758740e-06 1.0173779e-05 5.0477172e-07 1.1905577e-05 5.0674063e-01]]
+Generations took to generate model: 56
+L1 norm difference: 47
+L2 norm difference: 2.23606797749979
+ 
+./singleDNN08222021/ensembleResult_test1016truck.png
+fail prediction for ensemble: [[8.1844692e-06 4.8878342e-01 3.5693390e-09 2.4586641e-10 9.9281772e-10
+  1.6089425e-09 4.0901872e-07 3.6098164e-08 8.1383769e-07 5.1120710e-01]]
+Generations took to generate model: 81
+L1 norm difference: 76
+L2 norm difference: 2.6457513110645907
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+
+---------------------------------------------
+Generating an adversarial example for test set[1017].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99953604; Worse performing member: 0.99953675
+End of generation: 100; Best performing member: 0.98420423; Worse performing member: 0.9818625
+End of generation: 200; Best performing member: 0.723986; Worse performing member: 0.76305205
+The solution was found at generation: 262
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99996024; Worse performing member: 0.9999607
+End of generation: 100; Best performing member: 0.99927634; Worse performing member: 0.99896604
+End of generation: 200; Best performing member: 0.9849188; Worse performing member: 0.98360425
+End of generation: 300; Best performing member: 0.88627356; Worse performing member: 0.8920147
+End of generation: 400; Best performing member: 0.81719077; Worse performing member: 0.8173529
+End of generation: 500; Best performing member: 0.7794634; Worse performing member: 0.7795369
+End of generation: 600; Best performing member: 0.6335919; Worse performing member: 0.6459764
+End of generation: 700; Best performing member: 0.6033336; Worse performing member: 0.6033925
+End of generation: 800; Best performing member: 0.589112; Worse performing member: 0.59180343
+End of generation: 900; Best performing member: 0.4959045; Worse performing member: 0.48200947
+The solution was found at generation: 943
+
+	SingleModelTime: 102.20930552482605
+	EnsembleModelTime: 1775.248954296112
+
+./singleDNN08222021/modelResult_test1017bird.png
+Ground truth: frog
+fail prediction for resnet: [[0.00095645 0.0007004  0.4352226  0.10519618 0.02120461 0.00250506
+  0.43160343 0.00109115 0.00108071 0.00043935]]
+Generations took to generate model: 262
+L1 norm difference: 177
+L2 norm difference: 4.795831523312719
+ 
+./singleDNN08222021/ensembleResult_test1017deer.png
+fail prediction for ensemble: [[8.1595626e-06 5.5126031e-05 2.1616563e-03 1.3333704e-01 4.3199855e-01
+  1.8633343e-04 4.3083254e-01 8.1518572e-04 5.8888039e-04 1.6567745e-05]]
+Generations took to generate model: 943
+L1 norm difference: 515
+L2 norm difference: 8.717797887081348
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+
+---------------------------------------------
+Generating an adversarial example for test set[1018].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99829704; Worse performing member: 0.9982608
+The solution was found at generation: 76
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.83504546; Worse performing member: 0.83578205
+End of generation: 100; Best performing member: 0.8106014; Worse performing member: 0.80961454
+End of generation: 200; Best performing member: 0.8031365; Worse performing member: 0.80333626
+End of generation: 300; Best performing member: 0.79719526; Worse performing member: 0.7969166
+End of generation: 400; Best performing member: 0.7527405; Worse performing member: 0.7474482
+End of generation: 500; Best performing member: 0.6704948; Worse performing member: 0.6713657
+End of generation: 600; Best performing member: 0.6268427; Worse performing member: 0.62720436
+End of generation: 700; Best performing member: 0.60178727; Worse performing member: 0.6019562
+The solution was found at generation: 754
+
+	SingleModelTime: 29.638302326202393
+	EnsembleModelTime: 1419.5127251148224
+
+./singleDNN08222021/modelResult_test1018bird.png
+Ground truth: airplane
+fail prediction for resnet: [[4.8898688e-01 8.9871817e-09 5.1084316e-01 5.9363279e-06 1.2654496e-05
+  2.2977538e-06 1.4480550e-04 3.9923593e-06 2.5702610e-07 2.3799277e-08]]
+Generations took to generate model: 76
+L1 norm difference: 62
+L2 norm difference: 2.8284271247461903
+ 
+./singleDNN08222021/ensembleResult_test1018bird.png
+fail prediction for ensemble: [[4.9932852e-01 2.7102933e-06 5.0004804e-01 6.8778812e-05 1.1780212e-04
+  2.5523952e-05 3.9012206e-04 7.6334863e-06 1.0499260e-05 3.8289522e-07]]
+Generations took to generate model: 754
+L1 norm difference: 367
+L2 norm difference: 7.0710678118654755
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+
+---------------------------------------------
+Generating an adversarial example for test set[1019].
+groundtruth: 5
+basemodelprediction: 3
+ensemblemodelprediction: 3
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+
+---------------------------------------------
+Generating an adversarial example for test set[1020].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9998492; Worse performing member: 0.99983656
+End of generation: 100; Best performing member: 0.98828363; Worse performing member: 0.98834
+End of generation: 200; Best performing member: 0.6566592; Worse performing member: 0.7181405
+The solution was found at generation: 218
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99970245; Worse performing member: 0.99970424
+End of generation: 100; Best performing member: 0.9936404; Worse performing member: 0.992465
+End of generation: 200; Best performing member: 0.8808526; Worse performing member: 0.86927545
+End of generation: 300; Best performing member: 0.6198636; Worse performing member: 0.59575355
+The solution was found at generation: 351
+
+	SingleModelTime: 84.9142792224884
+	EnsembleModelTime: 661.0991952419281
+
+./singleDNN08222021/modelResult_test1020truck.png
+Ground truth: automobile
+fail prediction for resnet: [[2.5556528e-06 4.9638376e-01 2.2942938e-06 4.1890803e-07 4.7982144e-08
+  2.9793984e-08 1.3760646e-05 1.9973693e-07 1.5027457e-03 5.0209421e-01]]
+Generations took to generate model: 218
+L1 norm difference: 184
+L2 norm difference: 3.872983346207417
+ 
+./singleDNN08222021/ensembleResult_test1020truck.png
+fail prediction for ensemble: [[1.1510731e-06 4.9817324e-01 1.8686540e-06 1.8253897e-07 4.0451887e-08
+  6.4665810e-09 1.4759306e-05 3.4089982e-08 1.8625389e-05 5.0179017e-01]]
+Generations took to generate model: 351
+L1 norm difference: 243
+L2 norm difference: 6.0
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+
+---------------------------------------------
+Generating an adversarial example for test set[1021].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999995; Worse performing member: 0.99999964
+End of generation: 100; Best performing member: 0.9998387; Worse performing member: 0.99986184
+End of generation: 200; Best performing member: 0.98202723; Worse performing member: 0.98743874
+End of generation: 300; Best performing member: 0.74849993; Worse performing member: 0.76363796
+The solution was found at generation: 346
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99997747; Worse performing member: 0.99997866
+End of generation: 100; Best performing member: 0.99792624; Worse performing member: 0.9979825
+End of generation: 200; Best performing member: 0.9005148; Worse performing member: 0.89316034
+End of generation: 300; Best performing member: 0.80800855; Worse performing member: 0.8058171
+End of generation: 400; Best performing member: 0.78948665; Worse performing member: 0.78666496
+End of generation: 500; Best performing member: 0.6484769; Worse performing member: 0.6477208
+End of generation: 600; Best performing member: 0.59987426; Worse performing member: 0.600126
+End of generation: 700; Best performing member: 0.5254132; Worse performing member: 0.5189397
+End of generation: 800; Best performing member: 0.4048195; Worse performing member: 0.4047595
+The solution was found at generation: 827
+
+	SingleModelTime: 134.91003346443176
+	EnsembleModelTime: 1562.9029161930084
+
+./singleDNN08222021/modelResult_test1021truck.png
+Ground truth: automobile
+fail prediction for resnet: [[8.1981346e-03 4.9074578e-01 2.4942512e-05 3.7679169e-05 2.2765429e-04
+  1.1448644e-06 6.6158937e-06 1.6876619e-04 4.8258228e-04 5.0010663e-01]]
+Generations took to generate model: 346
+L1 norm difference: 220
+L2 norm difference: 4.358898943540674
+ 
+./singleDNN08222021/ensembleResult_test1021truck.png
+fail prediction for ensemble: [[3.9980174e-03 3.9884537e-01 1.6973767e-06 1.6148481e-06 6.4005231e-04
+  5.0637333e-08 2.5853195e-05 4.4099077e-05 1.9753423e-01 3.9890897e-01]]
+Generations took to generate model: 827
+L1 norm difference: 497
+L2 norm difference: 6.782329983125268
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+
+---------------------------------------------
+Generating an adversarial example for test set[1022].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.5693302; Worse performing member: 0.5693302
+The solution was found at generation: 2
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.93003035; Worse performing member: 0.9399163
+End of generation: 100; Best performing member: 0.58323073; Worse performing member: 0.5817412
+The solution was found at generation: 116
+
+	SingleModelTime: 0.9594330787658691
+	EnsembleModelTime: 218.77176094055176
+
+./singleDNN08222021/modelResult_test1022ship.png
+Ground truth: airplane
+fail prediction for resnet: [[4.9857748e-01 3.2637548e-04 4.0286547e-04 2.1071220e-04 5.8017962e-05
+  9.0735630e-06 4.7092759e-05 1.9436104e-05 4.9990633e-01 4.4270215e-04]]
+Generations took to generate model: 2
+L1 norm difference: 2
+L2 norm difference: 0.0
+ 
+./singleDNN08222021/ensembleResult_test1022ship.png
+fail prediction for ensemble: [[4.9747601e-01 1.5893758e-04 2.8779166e-05 3.7092432e-05 4.5150280e-04
+  1.9464837e-06 1.8663036e-04 2.7224096e-05 5.0114375e-01 4.8810866e-04]]
+Generations took to generate model: 116
+L1 norm difference: 93
+L2 norm difference: 3.0
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+
+---------------------------------------------
+Generating an adversarial example for test set[1023].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99791855; Worse performing member: 0.9979432
+End of generation: 100; Best performing member: 0.9396714; Worse performing member: 0.93256325
+The solution was found at generation: 195
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.8625833; Worse performing member: 0.8698287
+End of generation: 100; Best performing member: 0.6538211; Worse performing member: 0.6604667
+End of generation: 200; Best performing member: 0.50262564; Worse performing member: 0.49259973
+The solution was found at generation: 275
+
+	SingleModelTime: 76.05982112884521
+	EnsembleModelTime: 519.1732335090637
+
+./singleDNN08222021/modelResult_test1023deer.png
+Ground truth: airplane
+fail prediction for resnet: [[4.4898808e-01 1.9384384e-04 1.7761970e-02 5.2126282e-04 4.5923245e-01
+  4.7238918e-05 1.2241375e-02 3.9049980e-04 5.9493143e-02 1.1301739e-03]]
+Generations took to generate model: 195
+L1 norm difference: 177
+L2 norm difference: 5.5677643628300215
+ 
+./singleDNN08222021/ensembleResult_test1023bird.png
+fail prediction for ensemble: [[3.1237024e-01 2.3316438e-01 3.1472081e-01 5.2241201e-04 4.9937456e-03
+  1.2355010e-06 2.9348210e-02 2.0335165e-06 1.2923015e-02 9.1953933e-02]]
+Generations took to generate model: 275
+L1 norm difference: 224
+L2 norm difference: 5.830951894845301
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+
+---------------------------------------------
+Generating an adversarial example for test set[1024].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.97266114; Worse performing member: 0.9728266
+The solution was found at generation: 76
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9861824; Worse performing member: 0.9860918
+End of generation: 100; Best performing member: 0.55668133; Worse performing member: 0.69866055
+The solution was found at generation: 105
+
+	SingleModelTime: 29.822850942611694
+	EnsembleModelTime: 197.97009372711182
+
+./singleDNN08222021/modelResult_test1024dog.png
+Ground truth: cat
+fail prediction for resnet: [[2.96418468e-04 1.05182204e-04 1.97343645e-03 4.77401853e-01
+  1.61269016e-03 5.08396208e-01 5.59185678e-03 4.28507477e-03
+  6.44112743e-06 3.30811628e-04]]
+Generations took to generate model: 76
+L1 norm difference: 56
+L2 norm difference: 2.0
+ 
+./singleDNN08222021/ensembleResult_test1024frog.png
+fail prediction for ensemble: [[1.7668088e-05 6.2223233e-05 2.5243594e-03 4.7430563e-01 5.6663030e-03
+  3.7724596e-02 4.7912970e-01 5.3933653e-04 4.9598443e-06 2.5223062e-05]]
+Generations took to generate model: 105
+L1 norm difference: 98
+L2 norm difference: 3.0
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+
+---------------------------------------------
+Generating an adversarial example for test set[1025].
+groundtruth: 5
+basemodelprediction: 5
+ensemblemodelprediction: 5
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.97762215; Worse performing member: 0.97762215
+End of generation: 100; Best performing member: 0.61704737; Worse performing member: 0.5962951
+The solution was found at generation: 110
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.84475553; Worse performing member: 0.8438864
+End of generation: 100; Best performing member: 0.57991546; Worse performing member: 0.6010286
+End of generation: 200; Best performing member: 0.33948883; Worse performing member: 0.33781582
+The solution was found at generation: 211
+
+	SingleModelTime: 43.01087689399719
+	EnsembleModelTime: 397.74814009666443
+
+./singleDNN08222021/modelResult_test1025cat.png
+Ground truth: dog
+fail prediction for resnet: [[1.2663222e-04 1.3175607e-03 2.5729252e-05 4.9470815e-01 7.2205288e-04
+  4.8509660e-01 1.2260034e-04 1.5554588e-03 7.7045895e-04 1.5554753e-02]]
+Generations took to generate model: 110
+L1 norm difference: 85
+L2 norm difference: 3.3166247903554
+ 
+./singleDNN08222021/ensembleResult_test1025truck.png
+fail prediction for ensemble: [[7.8191697e-05 3.4187280e-02 3.7339803e-05 1.3255188e-01 5.7586511e-03
+  3.0696481e-01 1.1653176e-03 2.0182398e-01 9.1773365e-03 3.0825517e-01]]
+Generations took to generate model: 211
+L1 norm difference: 165
+L2 norm difference: 5.0990195135927845
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+
+---------------------------------------------
+Generating an adversarial example for test set[1026].
+groundtruth: 0
+basemodelprediction: 6
+ensemblemodelprediction: 0
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+
+---------------------------------------------
+Generating an adversarial example for test set[1027].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99953127; Worse performing member: 0.99954695
+The solution was found at generation: 95
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9995972; Worse performing member: 0.9995734
+End of generation: 100; Best performing member: 0.90039885; Worse performing member: 0.8773011
+The solution was found at generation: 172
+
+	SingleModelTime: 37.220128774642944
+	EnsembleModelTime: 323.3380198478699
+
+./singleDNN08222021/modelResult_test1027horse.png
+Ground truth: airplane
+fail prediction for resnet: [[4.77396280e-01 1.86976904e-05 1.45282422e-04 9.27659567e-05
+  1.19354576e-02 7.49307947e-06 1.62954784e-05 5.10191679e-01
+  9.29716043e-05 1.03036284e-04]]
+Generations took to generate model: 95
+L1 norm difference: 90
+L2 norm difference: 1.4142135623730951
+ 
+./singleDNN08222021/ensembleResult_test1027horse.png
+fail prediction for ensemble: [[4.8800668e-01 1.8676108e-05 2.4348451e-04 4.8016685e-05 1.4169110e-02
+  6.5051076e-06 2.2012340e-05 4.9475485e-01 2.4810904e-03 2.4958726e-04]]
+Generations took to generate model: 172
+L1 norm difference: 144
+L2 norm difference: 3.605551275463989
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+
+---------------------------------------------
+Generating an adversarial example for test set[1028].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.98719096; Worse performing member: 0.987152
+End of generation: 100; Best performing member: 0.79076916; Worse performing member: 0.7771234
+The solution was found at generation: 162
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9995214; Worse performing member: 0.9995268
+End of generation: 100; Best performing member: 0.99316293; Worse performing member: 0.9941896
+End of generation: 200; Best performing member: 0.9481224; Worse performing member: 0.9434425
+End of generation: 300; Best performing member: 0.81214285; Worse performing member: 0.81973094
+End of generation: 400; Best performing member: 0.620611; Worse performing member: 0.6165879
+End of generation: 500; Best performing member: 0.58898824; Worse performing member: 0.5903766
+The solution was found at generation: 583
+
+	SingleModelTime: 63.212544679641724
+	EnsembleModelTime: 1096.7275454998016
+
+./singleDNN08222021/modelResult_test1028bird.png
+Ground truth: frog
+fail prediction for resnet: [[0.00265374 0.00047214 0.44113266 0.06944568 0.04214786 0.00182741
+  0.4403097  0.0005458  0.00071944 0.00074551]]
+Generations took to generate model: 162
+L1 norm difference: 123
+L2 norm difference: 2.449489742783178
+ 
+./singleDNN08222021/ensembleResult_test1028bird.png
+fail prediction for ensemble: [[4.8389338e-05 2.3182395e-06 5.0113881e-01 3.1226411e-04 4.3119545e-04
+  2.4999977e-06 4.9804559e-01 4.0254608e-06 2.6340344e-06 1.2279927e-05]]
+Generations took to generate model: 583
+L1 norm difference: 348
+L2 norm difference: 5.385164807134504
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+
+---------------------------------------------
+Generating an adversarial example for test set[1029].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 100; Best performing member: 0.9999999; Worse performing member: 0.9999999
+End of generation: 200; Best performing member: 0.9999999; Worse performing member: 0.9999999
+End of generation: 300; Best performing member: 0.9999999; Worse performing member: 0.9999999
+End of generation: 400; Best performing member: 0.9999999; Worse performing member: 0.9999999
+End of generation: 500; Best performing member: 0.9999999; Worse performing member: 0.9999999
+End of generation: 600; Best performing member: 0.9999999; Worse performing member: 0.9999999
+End of generation: 700; Best performing member: 0.9999999; Worse performing member: 0.9999999
+End of generation: 800; Best performing member: 0.9999999; Worse performing member: 0.9999999
+End of generation: 900; Best performing member: 0.9999999; Worse performing member: 0.9999999
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 100; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 200; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 300; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 400; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 500; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 600; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 700; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 800; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 900; Best performing member: 1.0; Worse performing member: 1.0
+
+	SingleModelTime: 388.601642370224
+	EnsembleModelTime: 1881.0110783576965
+
+./singleDNN08222021/modelResult_test1029frog.png
+Ground truth: frog
+fail prediction for resnet: [[1.21128751e-09 2.93129476e-09 4.75263917e-08 1.09736975e-08
+  1.10277680e-08 4.85016360e-10 9.99999881e-01 1.22477528e-10
+  5.89778448e-10 1.25850241e-09]]
+Generations took to generate model: 1000
+L1 norm difference: 2
+L2 norm difference: 0.0
+ 
+./singleDNN08222021/ensembleResult_test1029frog.png
+fail prediction for ensemble: [[9.4921174e-13 4.0038146e-11 4.2975913e-08 1.2390599e-09 2.4708446e-10
+  5.2691477e-13 1.0000000e+00 8.7352651e-14 2.8658094e-12 1.3627477e-11]]
+Generations took to generate model: 1000
+L1 norm difference: 0
+L2 norm difference: 0.0
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+Incorrect labels are: frog and frog
+Generations took to generate model: 1000 and 1000
+L1 norm difference: 2 and 0
+L2 norm difference: 0.0 and 0.0
+
+---------------------------------------------
+Generating an adversarial example for test set[1030].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99964726; Worse performing member: 0.99964726
+End of generation: 100; Best performing member: 0.99151343; Worse performing member: 0.9933994
+End of generation: 200; Best performing member: 0.8952437; Worse performing member: 0.8947734
+The solution was found at generation: 298
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99922454; Worse performing member: 0.9992138
+End of generation: 100; Best performing member: 0.98581094; Worse performing member: 0.9836154
+End of generation: 200; Best performing member: 0.8957614; Worse performing member: 0.89174557
+End of generation: 300; Best performing member: 0.81915265; Worse performing member: 0.8214296
+End of generation: 400; Best performing member: 0.79585296; Worse performing member: 0.79429644
+End of generation: 500; Best performing member: 0.61787415; Worse performing member: 0.6192741
+End of generation: 600; Best performing member: 0.5490018; Worse performing member: 0.5454334
+The solution was found at generation: 665
+
+	SingleModelTime: 116.00972032546997
+	EnsembleModelTime: 1252.8716855049133
+
+./singleDNN08222021/modelResult_test1030dog.png
+Ground truth: cat
+fail prediction for resnet: [[4.0608295e-04 6.4603263e-04 2.6258075e-04 4.9250093e-01 7.2080904e-05
+  4.9527210e-01 2.0951331e-03 3.4528656e-04 4.9556949e-04 7.9041896e-03]]
+Generations took to generate model: 298
+L1 norm difference: 211
+L2 norm difference: 5.830951894845301
+ 
+./singleDNN08222021/ensembleResult_test1030truck.png
+fail prediction for ensemble: [[1.74066440e-06 2.50201061e-04 1.14400114e-04 4.03760761e-01
+  7.08083535e-05 1.90889180e-01 3.66554101e-04 5.22363931e-04
+  5.29626004e-06 4.04018641e-01]]
+Generations took to generate model: 665
+L1 norm difference: 422
+L2 norm difference: 7.54983443527075
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+Incorrect labels are: frog and frog
+Generations took to generate model: 1000 and 1000
+L1 norm difference: 2 and 0
+L2 norm difference: 0.0 and 0.0
+Incorrect labels are: dog and truck
+Generations took to generate model: 298 and 665
+L1 norm difference: 211 and 422
+L2 norm difference: 5.830951894845301 and 7.54983443527075
+
+---------------------------------------------
+Generating an adversarial example for test set[1031].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9368283; Worse performing member: 0.93771404
+The solution was found at generation: 65
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.7855467; Worse performing member: 0.78589785
+End of generation: 100; Best performing member: 0.66521585; Worse performing member: 0.6586307
+End of generation: 200; Best performing member: 0.57856363; Worse performing member: 0.58010906
+End of generation: 300; Best performing member: 0.41866717; Worse performing member: 0.431382
+The solution was found at generation: 314
+
+	SingleModelTime: 25.49389147758484
+	EnsembleModelTime: 590.5406610965729
+
+./singleDNN08222021/modelResult_test1031ship.png
+Ground truth: cat
+fail prediction for resnet: [[2.0875938e-02 5.5773454e-03 7.5446034e-04 4.6411902e-01 4.3902989e-03
+  3.2953396e-03 2.9800896e-04 7.5368263e-04 4.9694932e-01 2.9866477e-03]]
+Generations took to generate model: 65
+L1 norm difference: 58
+L2 norm difference: 3.605551275463989
+ 
+./singleDNN08222021/ensembleResult_test1031dog.png
+fail prediction for ensemble: [[1.09903023e-01 1.15649462e-01 3.03579545e-05 3.78990799e-01
+  3.51679453e-04 3.82216990e-01 1.41171739e-03 1.11479385e-04
+  1.07942726e-02 5.40098525e-04]]
+Generations took to generate model: 314
+L1 norm difference: 246
+L2 norm difference: 7.615773105863909
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+Incorrect labels are: frog and frog
+Generations took to generate model: 1000 and 1000
+L1 norm difference: 2 and 0
+L2 norm difference: 0.0 and 0.0
+Incorrect labels are: dog and truck
+Generations took to generate model: 298 and 665
+L1 norm difference: 211 and 422
+L2 norm difference: 5.830951894845301 and 7.54983443527075
+Incorrect labels are: ship and dog
+Generations took to generate model: 65 and 314
+L1 norm difference: 58 and 246
+L2 norm difference: 3.605551275463989 and 7.615773105863909
+
+---------------------------------------------
+Generating an adversarial example for test set[1032].
+groundtruth: 6
+basemodelprediction: 1
+ensemblemodelprediction: 6
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+Incorrect labels are: frog and frog
+Generations took to generate model: 1000 and 1000
+L1 norm difference: 2 and 0
+L2 norm difference: 0.0 and 0.0
+Incorrect labels are: dog and truck
+Generations took to generate model: 298 and 665
+L1 norm difference: 211 and 422
+L2 norm difference: 5.830951894845301 and 7.54983443527075
+Incorrect labels are: ship and dog
+Generations took to generate model: 65 and 314
+L1 norm difference: 58 and 246
+L2 norm difference: 3.605551275463989 and 7.615773105863909
+
+---------------------------------------------
+Generating an adversarial example for test set[1033].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9929062; Worse performing member: 0.9923913
+The solution was found at generation: 70
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9506; Worse performing member: 0.95050335
+End of generation: 100; Best performing member: 0.48598212; Worse performing member: 0.5182489
+The solution was found at generation: 110
+
+	SingleModelTime: 27.69183373451233
+	EnsembleModelTime: 206.87142062187195
+
+./singleDNN08222021/modelResult_test1033ship.png
+Ground truth: cat
+fail prediction for resnet: [[0.09929602 0.00396513 0.05014477 0.35999727 0.04264979 0.00271487
+  0.0286903  0.00369242 0.36706197 0.04178752]]
+Generations took to generate model: 70
+L1 norm difference: 71
+L2 norm difference: 2.23606797749979
+ 
+./singleDNN08222021/ensembleResult_test1033deer.png
+fail prediction for ensemble: [[0.00865716 0.00053874 0.0239926  0.43161526 0.4401965  0.00671991
+  0.05742713 0.01819446 0.00705456 0.00560369]]
+Generations took to generate model: 110
+L1 norm difference: 93
+L2 norm difference: 3.3166247903554
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+Incorrect labels are: frog and frog
+Generations took to generate model: 1000 and 1000
+L1 norm difference: 2 and 0
+L2 norm difference: 0.0 and 0.0
+Incorrect labels are: dog and truck
+Generations took to generate model: 298 and 665
+L1 norm difference: 211 and 422
+L2 norm difference: 5.830951894845301 and 7.54983443527075
+Incorrect labels are: ship and dog
+Generations took to generate model: 65 and 314
+L1 norm difference: 58 and 246
+L2 norm difference: 3.605551275463989 and 7.615773105863909
+Incorrect labels are: ship and deer
+Generations took to generate model: 70 and 110
+L1 norm difference: 71 and 93
+L2 norm difference: 2.23606797749979 and 3.3166247903554
+
+---------------------------------------------
+Generating an adversarial example for test set[1034].
+groundtruth: 6
+basemodelprediction: 3
+ensemblemodelprediction: 3
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+Incorrect labels are: frog and frog
+Generations took to generate model: 1000 and 1000
+L1 norm difference: 2 and 0
+L2 norm difference: 0.0 and 0.0
+Incorrect labels are: dog and truck
+Generations took to generate model: 298 and 665
+L1 norm difference: 211 and 422
+L2 norm difference: 5.830951894845301 and 7.54983443527075
+Incorrect labels are: ship and dog
+Generations took to generate model: 65 and 314
+L1 norm difference: 58 and 246
+L2 norm difference: 3.605551275463989 and 7.615773105863909
+Incorrect labels are: ship and deer
+Generations took to generate model: 70 and 110
+L1 norm difference: 71 and 93
+L2 norm difference: 2.23606797749979 and 3.3166247903554
+
+---------------------------------------------
+Generating an adversarial example for test set[1035].
+groundtruth: 6
+basemodelprediction: 4
+ensemblemodelprediction: 6
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+Incorrect labels are: frog and frog
+Generations took to generate model: 1000 and 1000
+L1 norm difference: 2 and 0
+L2 norm difference: 0.0 and 0.0
+Incorrect labels are: dog and truck
+Generations took to generate model: 298 and 665
+L1 norm difference: 211 and 422
+L2 norm difference: 5.830951894845301 and 7.54983443527075
+Incorrect labels are: ship and dog
+Generations took to generate model: 65 and 314
+L1 norm difference: 58 and 246
+L2 norm difference: 3.605551275463989 and 7.615773105863909
+Incorrect labels are: ship and deer
+Generations took to generate model: 70 and 110
+L1 norm difference: 71 and 93
+L2 norm difference: 2.23606797749979 and 3.3166247903554
+
+---------------------------------------------
+Generating an adversarial example for test set[1036].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99922025; Worse performing member: 0.9992506
+End of generation: 100; Best performing member: 0.94899595; Worse performing member: 0.9482876
+End of generation: 200; Best performing member: 0.42060706; Worse performing member: 0.38486192
+The solution was found at generation: 209
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.66114795; Worse performing member: 0.65991277
+The solution was found at generation: 57
+
+	SingleModelTime: 81.58913087844849
+	EnsembleModelTime: 107.55197477340698
+
+./singleDNN08222021/modelResult_test1036deer.png
+Ground truth: airplane
+fail prediction for resnet: [[2.8735450e-01 1.7199696e-03 2.0087801e-01 7.9928368e-02 2.9253039e-01
+  1.6575320e-02 9.7470842e-02 1.9846737e-02 2.6634161e-04 3.4295619e-03]]
+Generations took to generate model: 209
+L1 norm difference: 185
+L2 norm difference: 4.795831523312719
+ 
+./singleDNN08222021/ensembleResult_test1036bird.png
+fail prediction for ensemble: [[4.08820242e-01 3.74849364e-02 4.14392710e-01 1.04545854e-01
+  7.08483066e-03 6.16731355e-03 2.03289278e-02 6.56152697e-05
+  4.11201967e-04 6.98349555e-04]]
+Generations took to generate model: 57
+L1 norm difference: 45
+L2 norm difference: 2.23606797749979
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+Incorrect labels are: frog and frog
+Generations took to generate model: 1000 and 1000
+L1 norm difference: 2 and 0
+L2 norm difference: 0.0 and 0.0
+Incorrect labels are: dog and truck
+Generations took to generate model: 298 and 665
+L1 norm difference: 211 and 422
+L2 norm difference: 5.830951894845301 and 7.54983443527075
+Incorrect labels are: ship and dog
+Generations took to generate model: 65 and 314
+L1 norm difference: 58 and 246
+L2 norm difference: 3.605551275463989 and 7.615773105863909
+Incorrect labels are: ship and deer
+Generations took to generate model: 70 and 110
+L1 norm difference: 71 and 93
+L2 norm difference: 2.23606797749979 and 3.3166247903554
+Incorrect labels are: deer and bird
+Generations took to generate model: 209 and 57
+L1 norm difference: 185 and 45
+L2 norm difference: 4.795831523312719 and 2.23606797749979
+
+---------------------------------------------
+
+
+
+
+Incorrect labels are: truck and truck
+Generations took to generate model: 38 and 32
+L1 norm difference: 33 and 27
+L2 norm difference: 2.23606797749979 and 3.1622776601683795
+Incorrect labels are: dog and frog
+Generations took to generate model: 258 and 395
+L1 norm difference: 189 and 268
+L2 norm difference: 6.244997998398398 and 7.615773105863909
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 177 and 182
+L1 norm difference: 118 and 113
+L2 norm difference: 3.7416573867739413 and 3.7416573867739413
+Incorrect labels are: truck and truck
+Generations took to generate model: 91 and 111
+L1 norm difference: 65 and 94
+L2 norm difference: 2.449489742783178 and 4.0
+Incorrect labels are: truck and frog
+Generations took to generate model: 137 and 414
+L1 norm difference: 107 and 295
+L2 norm difference: 4.69041575982343 and 7.0
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 4 and 126
+L1 norm difference: 6 and 96
+L2 norm difference: 1.0 and 2.6457513110645907
+Incorrect labels are: automobile and automobile
+Generations took to generate model: 42 and 19
+L1 norm difference: 38 and 21
+L2 norm difference: 0.0 and 1.7320508075688772
+Incorrect labels are: cat and horse
+Generations took to generate model: 112 and 886
+L1 norm difference: 84 and 509
+L2 norm difference: 3.872983346207417 and 10.908712114635714
+Incorrect labels are: bird and airplane
+Generations took to generate model: 265 and 1000
+L1 norm difference: 183 and 405
+L2 norm difference: 5.0990195135927845 and 7.681145747868608
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 120 and 332
+L1 norm difference: 77 and 213
+L2 norm difference: 3.1622776601683795 and 5.916079783099616
+Incorrect labels are: airplane and dog
+Generations took to generate model: 195 and 359
+L1 norm difference: 147 and 256
+L2 norm difference: 3.1622776601683795 and 5.196152422706632
+Incorrect labels are: automobile and truck
+Generations took to generate model: 1000 and 950
+L1 norm difference: 0 and 458
+L2 norm difference: 0.0 and 14.866068747318506
+Incorrect labels are: frog and frog
+Generations took to generate model: 102 and 98
+L1 norm difference: 91 and 87
+L2 norm difference: 3.1622776601683795 and 3.872983346207417
+Incorrect labels are: deer and frog
+Generations took to generate model: 1000 and 548
+L1 norm difference: 0 and 381
+L2 norm difference: 0.0 and 7.745966692414834
+Incorrect labels are: truck and truck
+Generations took to generate model: 56 and 81
+L1 norm difference: 47 and 76
+L2 norm difference: 2.23606797749979 and 2.6457513110645907
+Incorrect labels are: bird and deer
+Generations took to generate model: 262 and 943
+L1 norm difference: 177 and 515
+L2 norm difference: 4.795831523312719 and 8.717797887081348
+Incorrect labels are: bird and bird
+Generations took to generate model: 76 and 754
+L1 norm difference: 62 and 367
+L2 norm difference: 2.8284271247461903 and 7.0710678118654755
+Incorrect labels are: truck and truck
+Generations took to generate model: 218 and 351
+L1 norm difference: 184 and 243
+L2 norm difference: 3.872983346207417 and 6.0
+Incorrect labels are: truck and truck
+Generations took to generate model: 346 and 827
+L1 norm difference: 220 and 497
+L2 norm difference: 4.358898943540674 and 6.782329983125268
+Incorrect labels are: ship and ship
+Generations took to generate model: 2 and 116
+L1 norm difference: 2 and 93
+L2 norm difference: 0.0 and 3.0
+Incorrect labels are: deer and bird
+Generations took to generate model: 195 and 275
+L1 norm difference: 177 and 224
+L2 norm difference: 5.5677643628300215 and 5.830951894845301
+Incorrect labels are: dog and frog
+Generations took to generate model: 76 and 105
+L1 norm difference: 56 and 98
+L2 norm difference: 2.0 and 3.0
+Incorrect labels are: cat and truck
+Generations took to generate model: 110 and 211
+L1 norm difference: 85 and 165
+L2 norm difference: 3.3166247903554 and 5.0990195135927845
+Incorrect labels are: horse and horse
+Generations took to generate model: 95 and 172
+L1 norm difference: 90 and 144
+L2 norm difference: 1.4142135623730951 and 3.605551275463989
+Incorrect labels are: bird and bird
+Generations took to generate model: 162 and 583
+L1 norm difference: 123 and 348
+L2 norm difference: 2.449489742783178 and 5.385164807134504
+Incorrect labels are: frog and frog
+Generations took to generate model: 1000 and 1000
+L1 norm difference: 2 and 0
+L2 norm difference: 0.0 and 0.0
+Incorrect labels are: dog and truck
+Generations took to generate model: 298 and 665
+L1 norm difference: 211 and 422
+L2 norm difference: 5.830951894845301 and 7.54983443527075
+Incorrect labels are: ship and dog
+Generations took to generate model: 65 and 314
+L1 norm difference: 58 and 246
+L2 norm difference: 3.605551275463989 and 7.615773105863909
+Incorrect labels are: ship and deer
+Generations took to generate model: 70 and 110
+L1 norm difference: 71 and 93
+L2 norm difference: 2.23606797749979 and 3.3166247903554
+Incorrect labels are: deer and bird
+Generations took to generate model: 209 and 57
+L1 norm difference: 185 and 45
+L2 norm difference: 4.795831523312719 and 2.23606797749979

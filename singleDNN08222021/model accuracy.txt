@@ -1,0 +1,10 @@
+Evaluating...
+Out of 10000 test samples, the ensemble method correctly predicts 8554 (0.8554)
+
+Evaluating each submodel's accuracy
+Out of 10000 test samples, the submodel {0} correctly predicts 8181 (0.8181)
+Out of 10000 test samples, the submodel {1} correctly predicts 8113 (0.8113)
+Out of 10000 test samples, the submodel {2} correctly predicts 8175 (0.8175)
+Out of 10000 test samples, the submodel {3} correctly predicts 8099 (0.8099)
+Out of 10000 test samples, the submodel {4} correctly predicts 8160 (0.816)
+

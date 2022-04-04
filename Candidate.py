@@ -1,7 +1,7 @@
 class Candidate():
     def __init__(self, my_image):
         self._image = my_image
-        self.fitness = 0
+        self._fitness = 0
 
     def getImage(self):
         return self._image
@@ -10,14 +10,14 @@ class Candidate():
         self._image = image
 
     def setFitness(self, fitness):
-        self.fitness = fitness
+        self._fitness = fitness
 
     def getFitness(self):
-        return self.fitness
+        return self._fitness
 
     def __str__(self):
         result = str(type(self._image)) + "\n"
-        result += "Fitness:" + str(self.fitness)
+        result += "Fitness:" + str(self._fitness)
         return result
 
     def __repr__(self):

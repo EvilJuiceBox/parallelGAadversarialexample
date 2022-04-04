@@ -1,0 +1,1 @@
+This experiment is done on 8/17/2021 to obtain the average data for 30 images over a single dnn with the regular GA approach.

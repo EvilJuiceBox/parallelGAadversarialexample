@@ -1,0 +1,13 @@
+*.h5
+*.png
+*.zip
+~$*.xlsx
+~$*.docx
+
+DifferentEnsemble/models/
+models/
+.idea/
+__pycache__/
+presentation materials/
+
+**/*.h5

@@ -49,19 +49,35 @@ def main(args):
     print(f'Output shape: {y_train.shape}')
 
     # load model
-    file_path = 'cifar10_dnn.h5'
+    file_path = 'models/kumardnn.h5'
     print(f'Loading {file_path}...')
     model = load_model(file_path)
     model.summary()
 
-    # demonstrate
-    x = np.expand_dims(x_test[333], 0)
-    y = model.predict(x)
-    print('Displaying input...')
-    img = Image.fromarray(np.uint8(x.reshape(input_shape) * 255), 'RGB').resize((128, 128))
-    img.show()
-    print(f'Prediction: {y}')
-    print(f'Prediction: {class_labels[np.argmax(y)]}')
+    # z-score
+    mean = np.mean(x_train, axis=(0, 1, 2, 3))
+    std = np.std(x_train, axis=(0, 1, 2, 3))
+    x_train = (x_train - mean) / (std + 1e-7)
+    x_test = (x_test - mean) / (std + 1e-7)
+
+    print('Evaluating...')
+    # result = model.evaluate(x_train, y_train, verbose=0)
+    result = model.evaluate(x_test, y_test, verbose=0)
+    print("Model metric name: " + str(model.metrics_names))
+    print(" ")
+    print(result)
+    print(f'Loss:     {result[0]:0.3f}')
+    print(f'Accuracy: {result[1]:0.3f}')
+
+
+    # # demonstrate
+    # x = np.expand_dims(x_test[333], 0)
+    # y = model.predict(x)
+    # print('Displaying input...')
+    # img = Image.fromarray(np.uint8(x.reshape(input_shape) * 255), 'RGB').resize((128, 128))
+    # img.show()
+    # print(f'Prediction: {y}')
+    # print(f'Prediction: {class_labels[np.argmax(y)]}')
 
 
 if __name__ == '__main__':

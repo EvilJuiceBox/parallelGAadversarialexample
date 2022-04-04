@@ -1,0 +1,751 @@
+Loading ./models/homogenous5nME/dnn_ensemble_target_0.h5...
+Loading ./models/homogenous5nME/dnn_ensemble_target_1.h5...
+Loading ./models/homogenous5nME/dnn_ensemble_target_2.h5...
+Loading ./models/homogenous5nME/dnn_ensemble_target_3.h5...
+Loading ./models/homogenous5nME/dnn_ensemble_target_4.h5...
+Loading kumardnn.h5...
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 32, 32, 32)        896       
+_________________________________________________________________
+activation_1 (Activation)    (None, 32, 32, 32)        0         
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 32, 32, 32)        128       
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 32, 32, 32)        9248      
+_________________________________________________________________
+activation_2 (Activation)    (None, 32, 32, 32)        0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 32, 32, 32)        128       
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 16, 16, 32)        0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 16, 16, 32)        0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 16, 16, 64)        18496     
+_________________________________________________________________
+activation_3 (Activation)    (None, 16, 16, 64)        0         
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 16, 16, 64)        256       
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 16, 16, 64)        36928     
+_________________________________________________________________
+activation_4 (Activation)    (None, 16, 16, 64)        0         
+_________________________________________________________________
+batch_normalization_4 (Batch (None, 16, 16, 64)        256       
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 8, 8, 64)          0         
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 8, 8, 64)          0         
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 8, 8, 128)         73856     
+_________________________________________________________________
+activation_5 (Activation)    (None, 8, 8, 128)         0         
+_________________________________________________________________
+batch_normalization_5 (Batch (None, 8, 8, 128)         512       
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 8, 8, 128)         147584    
+_________________________________________________________________
+activation_6 (Activation)    (None, 8, 8, 128)         0         
+_________________________________________________________________
+batch_normalization_6 (Batch (None, 8, 8, 128)         512       
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 4, 4, 128)         0         
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 4, 4, 128)         0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 2048)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 10)                20490     
+=================================================================
+Total params: 309,290
+Trainable params: 308,394
+Non-trainable params: 896
+_________________________________________________________________
+Input shape: (50000, 32, 32, 3)
+Output shape: (50000, 10)
+Generating an adversarial example for test set[1001].
+groundtruth: 0
+basemodelprediction: 8
+ensemblemodelprediction: 0
+Generating an adversarial example for test set[1002].
+groundtruth: 8
+basemodelprediction: 8
+ensemblemodelprediction: 8
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.86551285; Worse performing member: 0.86758137
+The solution was found at generation: 63
+	EnsembleModelTime: 190.49651741981506
+
+./homogenous5nME_09012021/ensembleResult_test1002truck.png
+fail prediction for ensemble: [[1.4391410e-02 3.0814340e-02 2.5581283e-04 4.5604058e-04 9.0678129e-04
+  6.0876762e-03 5.6272126e-03 5.4408656e-04 4.6873069e-01 4.7218594e-01]]
+Generations took to generate model: 63
+L1 norm difference: 55
+L2 norm difference: 3.3166247903554
+Saving results up to adversarial example 1002
+
+---------------------------------------------
+Generating an adversarial example for test set[1003].
+groundtruth: 4
+basemodelprediction: 4
+ensemblemodelprediction: 4
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.98313445; Worse performing member: 0.9822298
+End of generation: 100; Best performing member: 0.88901454; Worse performing member: 0.887681
+End of generation: 200; Best performing member: 0.8036338; Worse performing member: 0.8032811
+End of generation: 300; Best performing member: 0.69449455; Worse performing member: 0.6907224
+End of generation: 400; Best performing member: 0.58579993; Worse performing member: 0.5902901
+The solution was found at generation: 487
+	EnsembleModelTime: 1636.0156140327454
+
+./homogenous5nME_09012021/ensembleResult_test1003dog.png
+fail prediction for ensemble: [[8.2028021e-07 1.7870883e-07 1.5671265e-03 1.7221579e-02 4.8893157e-01
+  4.8903504e-01 2.0002758e-03 1.2411298e-03 1.7444024e-06 6.3133484e-07]]
+Generations took to generate model: 487
+L1 norm difference: 337
+L2 norm difference: 8.774964387392123
+Saving results up to adversarial example 1003
+
+---------------------------------------------
+Generating an adversarial example for test set[1004].
+groundtruth: 8
+basemodelprediction: 8
+ensemblemodelprediction: 8
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9997219; Worse performing member: 0.9997223
+End of generation: 100; Best performing member: 0.91596717; Worse performing member: 0.9440799
+End of generation: 200; Best performing member: 0.59517014; Worse performing member: 0.60751635
+The solution was found at generation: 223
+	EnsembleModelTime: 762.3282618522644
+
+./homogenous5nME_09012021/ensembleResult_test1004airplane.png
+fail prediction for ensemble: [[5.0262505e-01 1.4296377e-03 9.1172743e-04 1.9756129e-05 2.9762557e-05
+  5.0408903e-07 5.1521440e-04 3.1514824e-07 4.9438959e-01 7.8410267e-05]]
+Generations took to generate model: 223
+L1 norm difference: 128
+L2 norm difference: 4.795831523312719
+Saving results up to adversarial example 1004
+
+---------------------------------------------
+Generating an adversarial example for test set[1005].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.91497356; Worse performing member: 0.9169895
+End of generation: 100; Best performing member: 0.5555634; Worse performing member: 0.5228895
+The solution was found at generation: 103
+	EnsembleModelTime: 205.9470329284668
+
+./homogenous5nME_09012021/ensembleResult_test1005truck.png
+fail prediction for ensemble: [[1.8678232e-08 4.9491626e-01 8.3632944e-12 6.3745441e-12 2.2597161e-13
+  6.5882876e-12 1.0241917e-10 2.1634121e-10 1.4045059e-04 5.0494331e-01]]
+Generations took to generate model: 103
+L1 norm difference: 77
+L2 norm difference: 2.8284271247461903
+Saving results up to adversarial example 1005
+
+---------------------------------------------
+Generating an adversarial example for test set[1006].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9986561; Worse performing member: 0.99864376
+End of generation: 100; Best performing member: 0.9603947; Worse performing member: 0.96239865
+End of generation: 200; Best performing member: 0.8016118; Worse performing member: 0.80536425
+End of generation: 300; Best performing member: 0.49345717; Worse performing member: 0.5214926
+The solution was found at generation: 326
+	EnsembleModelTime: 645.7487194538116
+
+./homogenous5nME_09012021/ensembleResult_test1006frog.png
+fail prediction for ensemble: [[4.4700698e-04 3.8806182e-01 2.7952390e-05 2.8914423e-05 6.2837125e-06
+  5.1752090e-06 3.8951582e-01 2.7100214e-07 2.0280287e-01 1.9103954e-02]]
+Generations took to generate model: 326
+L1 norm difference: 238
+L2 norm difference: 6.48074069840786
+Saving results up to adversarial example 1006
+
+---------------------------------------------
+Generating an adversarial example for test set[1007].
+groundtruth: 8
+basemodelprediction: 8
+ensemblemodelprediction: 8
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.8053242; Worse performing member: 0.80559236
+The solution was found at generation: 97
+	EnsembleModelTime: 189.75279760360718
+
+./homogenous5nME_09012021/ensembleResult_test1007airplane.png
+fail prediction for ensemble: [[4.9666280e-01 8.6552789e-04 6.0269414e-03 1.2046881e-04 2.3047568e-04
+  5.6283943e-06 2.3408790e-04 4.1213149e-04 4.9431190e-01 1.1300333e-03]]
+Generations took to generate model: 97
+L1 norm difference: 74
+L2 norm difference: 2.23606797749979
+Saving results up to adversarial example 1007
+
+---------------------------------------------
+Generating an adversarial example for test set[1008].
+groundtruth: 9
+basemodelprediction: 9
+ensemblemodelprediction: 9
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.63840955; Worse performing member: 0.6465084
+The solution was found at generation: 48
+	EnsembleModelTime: 96.1836953163147
+
+./homogenous5nME_09012021/ensembleResult_test1008ship.png
+fail prediction for ensemble: [[0.0042029  0.22899146 0.0294207  0.01515455 0.01045921 0.00791957
+  0.18789566 0.01734666 0.25344282 0.24516651]]
+Generations took to generate model: 48
+L1 norm difference: 45
+L2 norm difference: 1.4142135623730951
+Saving results up to adversarial example 1008
+
+---------------------------------------------
+Generating an adversarial example for test set[1009].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.97162247; Worse performing member: 0.97165823
+End of generation: 100; Best performing member: 0.8564149; Worse performing member: 0.8542166
+End of generation: 200; Best performing member: 0.80023897; Worse performing member: 0.8013331
+End of generation: 300; Best performing member: 0.77895606; Worse performing member: 0.78441346
+End of generation: 400; Best performing member: 0.685296; Worse performing member: 0.688133
+End of generation: 500; Best performing member: 0.5775404; Worse performing member: 0.5769179
+End of generation: 600; Best performing member: 0.47750026; Worse performing member: 0.47592688
+The solution was found at generation: 658
+	EnsembleModelTime: 1289.6211965084076
+
+./homogenous5nME_09012021/ensembleResult_test1009horse.png
+fail prediction for ensemble: [[1.5104252e-05 7.2946558e-03 1.2679027e-03 5.1711178e-03 2.6132390e-02
+  1.7746933e-03 4.3825632e-01 4.3898112e-01 7.7757204e-04 8.0329105e-02]]
+Generations took to generate model: 658
+L1 norm difference: 406
+L2 norm difference: 8.246211251235321
+Saving results up to adversarial example 1009
+
+---------------------------------------------
+Generating an adversarial example for test set[1010].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.999778; Worse performing member: 0.9997818
+End of generation: 100; Best performing member: 0.99794805; Worse performing member: 0.9978019
+End of generation: 200; Best performing member: 0.97588366; Worse performing member: 0.97047645
+End of generation: 300; Best performing member: 0.8563441; Worse performing member: 0.85789716
+End of generation: 400; Best performing member: 0.7974857; Worse performing member: 0.7963661
+End of generation: 500; Best performing member: 0.6698369; Worse performing member: 0.6615005
+The solution was found at generation: 594
+	EnsembleModelTime: 1172.2028760910034
+
+./homogenous5nME_09012021/ensembleResult_test1010bird.png
+fail prediction for ensemble: [[4.95148748e-01 5.39680052e-08 5.04570365e-01 5.14177955e-05
+  7.64770230e-05 4.02631798e-07 1.10990855e-04 1.68606064e-07
+  4.11753535e-05 1.77452989e-07]]
+Generations took to generate model: 594
+L1 norm difference: 344
+L2 norm difference: 6.708203932499369
+Saving results up to adversarial example 1010
+
+---------------------------------------------
+Generating an adversarial example for test set[1011].
+groundtruth: 8
+basemodelprediction: 8
+ensemblemodelprediction: 8
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99999446; Worse performing member: 0.99999416
+End of generation: 100; Best performing member: 0.9861345; Worse performing member: 0.99106663
+End of generation: 200; Best performing member: 0.77996165; Worse performing member: 0.7725024
+The solution was found at generation: 246
+	EnsembleModelTime: 482.5911326408386
+
+./homogenous5nME_09012021/ensembleResult_test1011airplane.png
+fail prediction for ensemble: [[5.0052130e-01 1.3957308e-05 6.3804007e-05 6.0627488e-05 9.5126231e-04
+  3.4265503e-07 2.4031301e-06 2.1406466e-07 4.9837914e-01 6.8810418e-06]]
+Generations took to generate model: 246
+L1 norm difference: 157
+L2 norm difference: 5.196152422706632
+Saving results up to adversarial example 1011
+
+---------------------------------------------
+Generating an adversarial example for test set[1012].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9021987; Worse performing member: 0.90237296
+End of generation: 100; Best performing member: 0.79316187; Worse performing member: 0.8006476
+End of generation: 200; Best performing member: 0.6257651; Worse performing member: 0.62244964
+End of generation: 300; Best performing member: 0.5172626; Worse performing member: 0.5149559
+End of generation: 400; Best performing member: 0.380156; Worse performing member: 0.37946722
+The solution was found at generation: 497
+	EnsembleModelTime: 974.4178171157837
+
+./homogenous5nME_09012021/ensembleResult_test1012automobile.png
+fail prediction for ensemble: [[0.13547061 0.24756396 0.04561376 0.04998224 0.00154858 0.10005705
+  0.24407718 0.00527305 0.002779   0.16763459]]
+Generations took to generate model: 497
+L1 norm difference: 329
+L2 norm difference: 6.48074069840786
+Saving results up to adversarial example 1012
+
+---------------------------------------------
+Generating an adversarial example for test set[1013].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 100; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 200; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 300; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 400; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 500; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 600; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 700; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 800; Best performing member: 1.0; Worse performing member: 1.0
+End of generation: 900; Best performing member: 1.0; Worse performing member: 1.0
+	EnsembleModelTime: 1965.5404410362244
+
+Generating an adversarial example for test set[1014].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.86486226; Worse performing member: 0.86486226
+End of generation: 100; Best performing member: 0.3769339; Worse performing member: 0.35073572
+The solution was found at generation: 103
+	EnsembleModelTime: 205.97284531593323
+
+./homogenous5nME_09012021/ensembleResult_test1014frog.png
+fail prediction for ensemble: [[7.3729825e-05 3.8498634e-04 1.8648824e-02 3.1644711e-01 1.4729348e-01
+  1.9138606e-01 3.2050139e-01 4.1228174e-03 6.8280155e-05 1.0732857e-03]]
+Generations took to generate model: 103
+L1 norm difference: 102
+L2 norm difference: 4.69041575982343
+Saving results up to adversarial example 1014
+
+---------------------------------------------
+Generating an adversarial example for test set[1015].
+groundtruth: 4
+basemodelprediction: 4
+ensemblemodelprediction: 4
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999962; Worse performing member: 0.9999963
+End of generation: 100; Best performing member: 0.99976397; Worse performing member: 0.9998003
+End of generation: 200; Best performing member: 0.9773263; Worse performing member: 0.97872984
+End of generation: 300; Best performing member: 0.81810474; Worse performing member: 0.8183357
+End of generation: 400; Best performing member: 0.7898728; Worse performing member: 0.7920472
+End of generation: 500; Best performing member: 0.6430372; Worse performing member: 0.647077
+End of generation: 600; Best performing member: 0.5453053; Worse performing member: 0.5506635
+The solution was found at generation: 624
+	EnsembleModelTime: 1233.1120493412018
+
+./homogenous5nME_09012021/ensembleResult_test1015frog.png
+fail prediction for ensemble: [[1.7818287e-05 9.7364227e-06 5.0738286e-03 4.3144627e-03 4.9468660e-01
+  4.2665825e-04 4.9526173e-01 1.3831248e-04 3.0391952e-06 6.7788067e-05]]
+Generations took to generate model: 624
+L1 norm difference: 398
+L2 norm difference: 8.18535277187245
+Saving results up to adversarial example 1015
+
+---------------------------------------------
+Generating an adversarial example for test set[1016].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.60096276; Worse performing member: 0.602557
+The solution was found at generation: 37
+	EnsembleModelTime: 74.0594310760498
+
+./homogenous5nME_09012021/ensembleResult_test1016truck.png
+fail prediction for ensemble: [[2.0478365e-05 4.9775329e-01 7.6906723e-08 4.5823791e-07 1.4079244e-07
+  8.5349330e-07 4.9121186e-06 6.1053782e-07 1.4337059e-05 5.0220478e-01]]
+Generations took to generate model: 37
+L1 norm difference: 35
+L2 norm difference: 2.23606797749979
+Saving results up to adversarial example 1016
+
+---------------------------------------------
+Generating an adversarial example for test set[1017].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9998789; Worse performing member: 0.9998743
+End of generation: 100; Best performing member: 0.99626625; Worse performing member: 0.9969719
+End of generation: 200; Best performing member: 0.9246607; Worse performing member: 0.91592056
+End of generation: 300; Best performing member: 0.8005457; Worse performing member: 0.8028496
+End of generation: 400; Best performing member: 0.72744405; Worse performing member: 0.7176369
+End of generation: 500; Best performing member: 0.6270697; Worse performing member: 0.622435
+End of generation: 600; Best performing member: 0.54950017; Worse performing member: 0.55289143
+The solution was found at generation: 641
+	EnsembleModelTime: 1262.3585965633392
+
+./homogenous5nME_09012021/ensembleResult_test1017deer.png
+fail prediction for ensemble: [[8.1179533e-06 1.7489545e-03 1.5106657e-01 2.5485367e-02 4.1122231e-01
+  5.8130303e-05 4.0809995e-01 1.5573686e-03 6.0119381e-04 1.5212526e-04]]
+Generations took to generate model: 641
+L1 norm difference: 407
+L2 norm difference: 7.681145747868608
+Saving results up to adversarial example 1017
+
+---------------------------------------------
+Generating an adversarial example for test set[1018].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9911761; Worse performing member: 0.9916703
+End of generation: 100; Best performing member: 0.9547448; Worse performing member: 0.9539226
+End of generation: 200; Best performing member: 0.8447998; Worse performing member: 0.8612596
+End of generation: 300; Best performing member: 0.68948483; Worse performing member: 0.66536987
+The solution was found at generation: 374
+	EnsembleModelTime: 741.1837079524994
+
+./homogenous5nME_09012021/ensembleResult_test1018bird.png
+fail prediction for ensemble: [[4.9656940e-01 6.3697457e-06 4.9971825e-01 1.9053198e-04 6.4793619e-04
+  5.4356828e-05 2.7210072e-03 4.6156310e-05 3.9637849e-05 6.3877487e-06]]
+Generations took to generate model: 374
+L1 norm difference: 203
+L2 norm difference: 5.196152422706632
+Saving results up to adversarial example 1018
+
+---------------------------------------------
+Generating an adversarial example for test set[1019].
+groundtruth: 5
+basemodelprediction: 3
+ensemblemodelprediction: 3
+Generating an adversarial example for test set[1020].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999224; Worse performing member: 0.9999239
+End of generation: 100; Best performing member: 0.9981202; Worse performing member: 0.99829996
+End of generation: 200; Best performing member: 0.9663105; Worse performing member: 0.96839255
+End of generation: 300; Best performing member: 0.8070515; Worse performing member: 0.8043214
+End of generation: 400; Best performing member: 0.6538121; Worse performing member: 0.65532506
+End of generation: 500; Best performing member: 0.52596974; Worse performing member: 0.5221882
+The solution was found at generation: 508
+	EnsembleModelTime: 1000.4057738780975
+
+./homogenous5nME_09012021/ensembleResult_test1020truck.png
+fail prediction for ensemble: [[7.2706865e-07 4.9955621e-01 1.2101047e-05 4.4123004e-07 7.4563367e-08
+  1.0788645e-08 2.1697688e-05 4.9523493e-07 2.9893385e-05 5.0037837e-01]]
+Generations took to generate model: 508
+L1 norm difference: 350
+L2 norm difference: 6.082762530298219
+Saving results up to adversarial example 1020
+
+---------------------------------------------
+Generating an adversarial example for test set[1021].
+groundtruth: 1
+basemodelprediction: 1
+ensemblemodelprediction: 1
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99999124; Worse performing member: 0.99999064
+End of generation: 100; Best performing member: 0.9958512; Worse performing member: 0.99479926
+End of generation: 200; Best performing member: 0.8329608; Worse performing member: 0.8208542
+End of generation: 300; Best performing member: 0.7948389; Worse performing member: 0.79273057
+End of generation: 400; Best performing member: 0.6699723; Worse performing member: 0.6572515
+End of generation: 500; Best performing member: 0.37392533; Worse performing member: 0.35705236
+The solution was found at generation: 554
+	EnsembleModelTime: 1091.905005455017
+
+./homogenous5nME_09012021/ensembleResult_test1021ship.png
+fail prediction for ensemble: [[1.7218377e-01 2.1650895e-01 7.5865898e-04 9.1819523e-04 1.8849728e-01
+  4.6240992e-05 2.7105430e-04 4.5571121e-04 2.1744195e-01 2.0291820e-01]]
+Generations took to generate model: 554
+L1 norm difference: 367
+L2 norm difference: 6.708203932499369
+Saving results up to adversarial example 1021
+
+---------------------------------------------
+Generating an adversarial example for test set[1022].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9720896; Worse performing member: 0.9727701
+The solution was found at generation: 84
+	EnsembleModelTime: 166.7733552455902
+
+./homogenous5nME_09012021/ensembleResult_test1022ship.png
+fail prediction for ensemble: [[4.8170871e-01 6.2186469e-04 5.7779560e-03 1.4075660e-03 1.4181472e-03
+  5.5951659e-05 4.6040639e-04 1.6294273e-04 5.0529069e-01 3.0957949e-03]]
+Generations took to generate model: 84
+L1 norm difference: 72
+L2 norm difference: 3.7416573867739413
+Saving results up to adversarial example 1022
+
+---------------------------------------------
+Generating an adversarial example for test set[1023].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.8003815; Worse performing member: 0.80184853
+End of generation: 100; Best performing member: 0.5745085; Worse performing member: 0.57288873
+End of generation: 200; Best performing member: 0.4262394; Worse performing member: 0.42944226
+The solution was found at generation: 281
+	EnsembleModelTime: 553.0474398136139
+
+./homogenous5nME_09012021/ensembleResult_test1023bird.png
+fail prediction for ensemble: [[3.7046689e-01 5.9252791e-04 3.7167311e-01 4.2848336e-04 2.3852313e-01
+  3.8412309e-06 1.1640406e-02 5.3234553e-06 6.3738548e-03 2.9237251e-04]]
+Generations took to generate model: 281
+L1 norm difference: 223
+L2 norm difference: 5.291502622129181
+Saving results up to adversarial example 1023
+
+---------------------------------------------
+Generating an adversarial example for test set[1024].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.93552303; Worse performing member: 0.93539876
+The solution was found at generation: 99
+	EnsembleModelTime: 194.9155490398407
+
+./homogenous5nME_09012021/ensembleResult_test1024frog.png
+fail prediction for ensemble: [[2.42894908e-04 1.17811396e-04 4.17326856e-03 4.15441692e-01
+  1.07206041e-02 8.18726271e-02 4.86142725e-01 1.27923861e-03
+  8.82055588e-07 8.21265257e-06]]
+Generations took to generate model: 99
+L1 norm difference: 88
+L2 norm difference: 2.449489742783178
+Saving results up to adversarial example 1024
+
+---------------------------------------------
+Generating an adversarial example for test set[1025].
+groundtruth: 5
+basemodelprediction: 5
+ensemblemodelprediction: 5
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9839963; Worse performing member: 0.98374367
+End of generation: 100; Best performing member: 0.86724913; Worse performing member: 0.8539556
+End of generation: 200; Best performing member: 0.50484794; Worse performing member: 0.48887736
+The solution was found at generation: 247
+	EnsembleModelTime: 488.25724959373474
+
+./homogenous5nME_09012021/ensembleResult_test1025cat.png
+fail prediction for ensemble: [[1.1562709e-03 3.0640683e-03 2.8853578e-04 3.2880104e-01 4.8493847e-02
+  3.2617372e-01 1.2009770e-03 1.7754465e-01 1.7196741e-03 1.1155726e-01]]
+Generations took to generate model: 247
+L1 norm difference: 181
+L2 norm difference: 5.830951894845301
+Saving results up to adversarial example 1025
+
+---------------------------------------------
+Generating an adversarial example for test set[1026].
+groundtruth: 0
+basemodelprediction: 6
+ensemblemodelprediction: 6
+Generating an adversarial example for test set[1027].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.99970806; Worse performing member: 0.99974424
+End of generation: 100; Best performing member: 0.94127274; Worse performing member: 0.93119967
+The solution was found at generation: 197
+	EnsembleModelTime: 388.67530727386475
+
+./homogenous5nME_09012021/ensembleResult_test1027horse.png
+fail prediction for ensemble: [[3.4939557e-01 4.0777394e-04 2.7733209e-04 8.6397980e-05 2.9714698e-01
+  3.3986202e-05 1.8361272e-04 3.5151523e-01 3.5378942e-04 5.9936754e-04]]
+Generations took to generate model: 197
+L1 norm difference: 148
+L2 norm difference: 2.8284271247461903
+Saving results up to adversarial example 1027
+
+---------------------------------------------
+Generating an adversarial example for test set[1028].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999199; Worse performing member: 0.9999197
+End of generation: 100; Best performing member: 0.9946152; Worse performing member: 0.9969202
+End of generation: 200; Best performing member: 0.9213645; Worse performing member: 0.9176753
+End of generation: 300; Best performing member: 0.80796754; Worse performing member: 0.80867463
+End of generation: 400; Best performing member: 0.7853976; Worse performing member: 0.77976257
+End of generation: 500; Best performing member: 0.6791887; Worse performing member: 0.6702104
+End of generation: 600; Best performing member: 0.60805786; Worse performing member: 0.61004484
+End of generation: 700; Best performing member: 0.56285775; Worse performing member: 0.5686924
+The solution was found at generation: 752
+	EnsembleModelTime: 1478.5086133480072
+
+./homogenous5nME_09012021/ensembleResult_test1028bird.png
+fail prediction for ensemble: [[6.61604354e-05 3.13802366e-06 5.06931543e-01 1.05444877e-03
+  1.19718187e-03 3.27929729e-06 4.90721554e-01 1.38403470e-06
+  1.18011285e-05 9.55115138e-06]]
+Generations took to generate model: 752
+L1 norm difference: 430
+L2 norm difference: 7.0710678118654755
+Saving results up to adversarial example 1028
+
+---------------------------------------------
+Generating an adversarial example for test set[1029].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999987; Worse performing member: 0.9999987
+End of generation: 100; Best performing member: 0.99996436; Worse performing member: 0.99995935
+End of generation: 200; Best performing member: 0.99865085; Worse performing member: 0.99874747
+End of generation: 300; Best performing member: 0.96679604; Worse performing member: 0.9635871
+End of generation: 400; Best performing member: 0.8512255; Worse performing member: 0.85420257
+End of generation: 500; Best performing member: 0.8093271; Worse performing member: 0.8091612
+End of generation: 600; Best performing member: 0.8009125; Worse performing member: 0.80083245
+End of generation: 700; Best performing member: 0.7988244; Worse performing member: 0.79903823
+End of generation: 800; Best performing member: 0.7736881; Worse performing member: 0.7792798
+End of generation: 900; Best performing member: 0.621111; Worse performing member: 0.621379
+	EnsembleModelTime: 1969.077428817749
+
+Generating an adversarial example for test set[1030].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9906486; Worse performing member: 0.9895595
+End of generation: 100; Best performing member: 0.9401436; Worse performing member: 0.9514106
+End of generation: 200; Best performing member: 0.81686956; Worse performing member: 0.8200551
+End of generation: 300; Best performing member: 0.6451642; Worse performing member: 0.65979064
+End of generation: 400; Best performing member: 0.5328376; Worse performing member: 0.5297509
+The solution was found at generation: 433
+	EnsembleModelTime: 856.2202427387238
+
+./homogenous5nME_09012021/ensembleResult_test1030dog.png
+fail prediction for ensemble: [[1.2770527e-04 3.4070920e-04 2.5766669e-05 4.9808064e-01 1.6693299e-04
+  4.9891776e-01 4.1723289e-04 1.6858733e-03 7.1469949e-05 1.6592644e-04]]
+Generations took to generate model: 433
+L1 norm difference: 296
+L2 norm difference: 5.196152422706632
+Saving results up to adversarial example 1030
+
+---------------------------------------------
+Generating an adversarial example for test set[1031].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9828674; Worse performing member: 0.9828674
+End of generation: 100; Best performing member: 0.8628496; Worse performing member: 0.86978114
+End of generation: 200; Best performing member: 0.74580437; Worse performing member: 0.7510039
+End of generation: 300; Best performing member: 0.6173496; Worse performing member: 0.616989
+End of generation: 400; Best performing member: 0.57513225; Worse performing member: 0.5746037
+End of generation: 500; Best performing member: 0.3506158; Worse performing member: 0.33794087
+The solution was found at generation: 501
+	EnsembleModelTime: 989.7015445232391
+
+./homogenous5nME_09012021/ensembleResult_test1031deer.png
+fail prediction for ensemble: [[2.0622301e-01 6.4365158e-04 5.9656065e-04 3.2894352e-01 3.4679076e-01
+  6.9294691e-02 8.4643569e-03 2.1115793e-03 3.6603745e-02 3.2814353e-04]]
+Generations took to generate model: 501
+L1 norm difference: 320
+L2 norm difference: 8.12403840463596
+Saving results up to adversarial example 1031
+
+---------------------------------------------
+Generating an adversarial example for test set[1032].
+groundtruth: 6
+basemodelprediction: 1
+ensemblemodelprediction: 6
+Generating an adversarial example for test set[1033].
+groundtruth: 3
+basemodelprediction: 3
+ensemblemodelprediction: 3
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.8582872; Worse performing member: 0.85951555
+The solution was found at generation: 69
+	EnsembleModelTime: 139.61225581169128
+
+./homogenous5nME_09012021/ensembleResult_test1033deer.png
+fail prediction for ensemble: [[1.9303992e-03 1.6336818e-04 1.1019511e-02 4.4049969e-01 4.4375959e-01
+  2.6923012e-02 5.9691191e-02 1.2461249e-02 2.2951723e-03 1.2568815e-03]]
+Generations took to generate model: 69
+L1 norm difference: 63
+L2 norm difference: 2.8284271247461903
+Saving results up to adversarial example 1033
+
+---------------------------------------------
+Generating an adversarial example for test set[1034].
+groundtruth: 6
+basemodelprediction: 3
+ensemblemodelprediction: 6
+Generating an adversarial example for test set[1035].
+groundtruth: 6
+basemodelprediction: 4
+ensemblemodelprediction: 6
+Generating an adversarial example for test set[1036].
+groundtruth: 0
+basemodelprediction: 0
+ensemblemodelprediction: 0
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.706612; Worse performing member: 0.70249987
+The solution was found at generation: 76
+	EnsembleModelTime: 155.3287215232849
+
+./homogenous5nME_09012021/ensembleResult_test1036bird.png
+fail prediction for ensemble: [[0.3673238  0.03519965 0.37102452 0.01301177 0.1688673  0.01061621
+  0.02729423 0.00284519 0.00089779 0.00291956]]
+Generations took to generate model: 76
+L1 norm difference: 72
+L2 norm difference: 2.6457513110645907
+Saving results up to adversarial example 1036
+
+---------------------------------------------
+Generating an adversarial example for test set[1037].
+groundtruth: 7
+basemodelprediction: 7
+ensemblemodelprediction: 7
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999963; Worse performing member: 0.99999684
+End of generation: 100; Best performing member: 0.9950635; Worse performing member: 0.9950713
+End of generation: 200; Best performing member: 0.80292034; Worse performing member: 0.8042434
+End of generation: 300; Best performing member: 0.6206837; Worse performing member: 0.6202856
+End of generation: 400; Best performing member: 0.5965944; Worse performing member: 0.59394073
+The solution was found at generation: 480
+	EnsembleModelTime: 975.1748871803284
+
+./homogenous5nME_09012021/ensembleResult_test1037truck.png
+fail prediction for ensemble: [[1.1247726e-05 3.3947770e-06 1.1991270e-07 2.5354075e-06 1.4282024e-03
+  9.2925411e-06 1.3014434e-07 4.9743581e-01 6.5527007e-04 5.0045407e-01]]
+Generations took to generate model: 480
+L1 norm difference: 309
+L2 norm difference: 6.48074069840786
+Saving results up to adversarial example 1037
+
+---------------------------------------------
+Generating an adversarial example for test set[1038].
+groundtruth: 2
+basemodelprediction: 2
+ensemblemodelprediction: 2
+parallelGA start, best member migrates every 10 generations.
+End of generation: 0; Best performing member: 0.9999622; Worse performing member: 0.99996185
+End of generation: 100; Best performing member: 0.9983984; Worse performing member: 0.9985107
+End of generation: 200; Best performing member: 0.98190916; Worse performing member: 0.98344916
+End of generation: 300; Best performing member: 0.87144697; Worse performing member: 0.8669546
+End of generation: 400; Best performing member: 0.6840874; Worse performing member: 0.6842164
+End of generation: 500; Best performing member: 0.5821629; Worse performing member: 0.58855784
+The solution was found at generation: 563
+	EnsembleModelTime: 1131.2483365535736
+
+./homogenous5nME_09012021/ensembleResult_test1038airplane.png
+fail prediction for ensemble: [[4.9337593e-01 8.3425421e-06 4.7541347e-01 2.5018665e-03 2.7196646e-02
+  1.3072100e-04 5.2237761e-04 1.1885003e-04 1.8520372e-04 5.4655608e-04]]
+Generations took to generate model: 563
+L1 norm difference: 316
+L2 norm difference: 9.055385138137417
+Saving results up to adversarial example 1038
+
+---------------------------------------------

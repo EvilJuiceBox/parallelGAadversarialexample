@@ -1,0 +1,245 @@
+Loading ensemble90/dnn_ensemble_target_0.h5...
+Loading ensemble90/dnn_ensemble_target_1.h5...
+Loading ensemble90/dnn_ensemble_target_2.h5...
+Loading ensemble90/dnn_ensemble_target_3.h5...
+Loading ensemble90/dnn_ensemble_target_4.h5...
+Loading ninetydnn.h5...
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 32, 32, 32)        896       
+_________________________________________________________________
+activation_1 (Activation)    (None, 32, 32, 32)        0         
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 32, 32, 32)        128       
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 32, 32, 32)        9248      
+_________________________________________________________________
+activation_2 (Activation)    (None, 32, 32, 32)        0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 32, 32, 32)        128       
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 16, 16, 32)        0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 16, 16, 32)        0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 16, 16, 64)        18496     
+_________________________________________________________________
+activation_3 (Activation)    (None, 16, 16, 64)        0         
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 16, 16, 64)        256       
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 16, 16, 64)        36928     
+_________________________________________________________________
+activation_4 (Activation)    (None, 16, 16, 64)        0         
+_________________________________________________________________
+batch_normalization_4 (Batch (None, 16, 16, 64)        256       
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 8, 8, 64)          0         
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 8, 8, 64)          0         
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 8, 8, 128)         73856     
+_________________________________________________________________
+activation_5 (Activation)    (None, 8, 8, 128)         0         
+_________________________________________________________________
+batch_normalization_5 (Batch (None, 8, 8, 128)         512       
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 8, 8, 128)         147584    
+_________________________________________________________________
+activation_6 (Activation)    (None, 8, 8, 128)         0         
+_________________________________________________________________
+batch_normalization_6 (Batch (None, 8, 8, 128)         512       
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 4, 4, 128)         0         
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 4, 4, 128)         0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 2048)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 10)                20490     
+=================================================================
+Total params: 309,290
+Trainable params: 308,394
+Non-trainable params: 896
+_________________________________________________________________
+Input shape: (50000, 32, 32, 3)
+Output shape: (50000, 10)
+Generating an adversarial example for test set[2021].
+groundtruth: 8
+basemodelprediction: 8
+ensemblemodelprediction: 8
+parallelGA start
+End of generation: 0; Best performing member: 0.9989681; Worse performing member: 0.9992399
+The solution was found at generation: 81
+parallelGA start
+End of generation: 0; Best performing member: 0.9932097; Worse performing member: 0.99348116
+The solution was found at generation: 91
+modelResult_test2021
+Ground truth: ship
+fail prediction for resnet: [[5.0495881e-01 1.2260497e-03 7.1882852e-04 8.8934973e-04 2.4583557e-04
+  4.6916615e-05 8.4892970e-05 6.0073860e-05 4.9035066e-01 1.4185148e-03]]
+Generations took to generate model: 81
+L1 norm difference: 81
+L2 norm difference: 2.8284271247461903
+ensembleResult_test2021
+fail prediction for ensemble: [[4.9991766e-01 6.1188744e-05 6.1640231e-04 2.2321122e-04 1.0070532e-04
+  1.3764383e-05 1.8056529e-05 1.4392924e-05 4.9897584e-01 5.8749749e-05]]
+Generations took to generate model: 91
+L1 norm difference: 99
+L2 norm difference: 4.0
+
+
+
+
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 81 and 91
+L1 norm difference: 81 and 99
+L2 norm difference: 2.8284271247461903 and 4.0
+Generating an adversarial example for test set[2022].
+groundtruth: 5
+basemodelprediction: 5
+ensemblemodelprediction: 5
+parallelGA start
+End of generation: 0; Best performing member: 0.92201024; Worse performing member: 0.9304979
+The solution was found at generation: 47
+parallelGA start
+End of generation: 0; Best performing member: 0.5282387; Worse performing member: 0.55339134
+The solution was found at generation: 14
+modelResult_test2022
+Ground truth: dog
+fail prediction for resnet: [[3.0560386e-05 3.9614286e-05 4.6253327e-01 9.0111122e-02 1.0117483e-03
+  4.4179410e-01 3.5303552e-03 9.1562630e-04 8.1699909e-06 2.5348694e-05]]
+Generations took to generate model: 47
+L1 norm difference: 55
+L2 norm difference: 3.0
+ensembleResult_test2022
+fail prediction for ensemble: [[3.2007145e-05 4.0151415e-05 3.8560051e-01 1.9773200e-01 3.9471174e-03
+  3.8550928e-01 2.6292419e-02 6.3308876e-04 8.4962958e-06 2.0492873e-04]]
+Generations took to generate model: 14
+L1 norm difference: 20
+L2 norm difference: 0.0
+
+
+
+
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 81 and 91
+L1 norm difference: 81 and 99
+L2 norm difference: 2.8284271247461903 and 4.0
+Incorrect labels are: bird and bird
+Generations took to generate model: 47 and 14
+L1 norm difference: 55 and 20
+L2 norm difference: 3.0 and 0.0
+Generating an adversarial example for test set[2023].
+groundtruth: 5
+basemodelprediction: 6
+ensemblemodelprediction: 5
+
+
+
+
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 81 and 91
+L1 norm difference: 81 and 99
+L2 norm difference: 2.8284271247461903 and 4.0
+Incorrect labels are: bird and bird
+Generations took to generate model: 47 and 14
+L1 norm difference: 55 and 20
+L2 norm difference: 3.0 and 0.0
+Generating an adversarial example for test set[2024].
+groundtruth: 6
+basemodelprediction: 6
+ensemblemodelprediction: 6
+parallelGA start
+End of generation: 0; Best performing member: 0.96865594; Worse performing member: 0.9623784
+The solution was found at generation: 36
+parallelGA start
+End of generation: 0; Best performing member: 0.9857706; Worse performing member: 0.98288506
+End of generation: 100; Best performing member: 0.50132185; Worse performing member: 0.4852934
+The solution was found at generation: 103
+modelResult_test2024
+Ground truth: frog
+fail prediction for resnet: [[9.9994402e-05 1.8073730e-04 5.0593001e-01 5.9677852e-05 3.2827375e-05
+  9.9016797e-05 4.9081403e-01 4.1107816e-04 1.0931699e-03 1.2795085e-03]]
+Generations took to generate model: 36
+L1 norm difference: 53
+L2 norm difference: 2.6457513110645907
+ensembleResult_test2024
+fail prediction for ensemble: [[0.00068392 0.00246389 0.08890983 0.00268347 0.00060391 0.00097564
+  0.44527555 0.00229794 0.00410358 0.4520023 ]]
+Generations took to generate model: 103
+L1 norm difference: 130
+L2 norm difference: 4.47213595499958
+
+
+
+
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 81 and 91
+L1 norm difference: 81 and 99
+L2 norm difference: 2.8284271247461903 and 4.0
+Incorrect labels are: bird and bird
+Generations took to generate model: 47 and 14
+L1 norm difference: 55 and 20
+L2 norm difference: 3.0 and 0.0
+Incorrect labels are: bird and truck
+Generations took to generate model: 36 and 103
+L1 norm difference: 53 and 130
+L2 norm difference: 2.6457513110645907 and 4.47213595499958
+Generating an adversarial example for test set[2025].
+groundtruth: 4
+basemodelprediction: 4
+ensemblemodelprediction: 4
+parallelGA start
+End of generation: 0; Best performing member: 0.9999982; Worse performing member: 0.99999845
+End of generation: 100; Best performing member: 0.94170076; Worse performing member: 0.9628313
+The solution was found at generation: 138
+parallelGA start
+End of generation: 0; Best performing member: 0.9999944; Worse performing member: 0.9999916
+End of generation: 100; Best performing member: 0.98273516; Worse performing member: 0.97655135
+End of generation: 200; Best performing member: 0.7969031; Worse performing member: 0.79223484
+The solution was found at generation: 293
+modelResult_test2025
+Ground truth: deer
+fail prediction for resnet: [[6.8851673e-06 4.2847856e-07 1.5697462e-03 2.6637310e-04 4.7272515e-01
+  3.2261178e-02 7.4868585e-04 4.9242064e-01 5.9429834e-07 2.8925336e-07]]
+Generations took to generate model: 138
+L1 norm difference: 148
+L2 norm difference: 1.0
+ensembleResult_test2025
+fail prediction for ensemble: [[1.0121805e-05 3.8394482e-08 6.8818836e-04 4.5476723e-03 3.6754918e-01
+  3.7061977e-01 4.4958411e-05 2.5653425e-01 5.3498256e-06 4.9143921e-07]]
+Generations took to generate model: 293
+L1 norm difference: 284
+L2 norm difference: 1.7320508075688772
+
+
+
+
+Incorrect labels are: airplane and airplane
+Generations took to generate model: 81 and 91
+L1 norm difference: 81 and 99
+L2 norm difference: 2.8284271247461903 and 4.0
+Incorrect labels are: bird and bird
+Generations took to generate model: 47 and 14
+L1 norm difference: 55 and 20
+L2 norm difference: 3.0 and 0.0
+Incorrect labels are: bird and truck
+Generations took to generate model: 36 and 103
+L1 norm difference: 53 and 130
+L2 norm difference: 2.6457513110645907 and 4.47213595499958
+Incorrect labels are: horse and dog
+Generations took to generate model: 138 and 293
+L1 norm difference: 148 and 284
+L2 norm difference: 1.0 and 1.7320508075688772
+Generating an adversarial example for test set[2026].
+groundtruth: 5
+basemodelprediction: 5
+ensemblemodelprediction: 5
+parallelGA start
+End of generation: 0; Best performing member: 0.9917818; Worse performing member: 0.9914083
+The solution was found at generation: 75
+parallelGA start
+End of generation: 0; Best performing member: 0.99339753; Worse performing member: 0.99356604
+End of generation: 100; Best performing member: 0.7398812; Worse performing member: 0.7088124

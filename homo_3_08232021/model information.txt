@@ -1,0 +1,9 @@
+This ensemble consist of three submodels, each trained on a third of the training data.
+
+Evaluating...
+Out of 10000 test samples, the ensemble method correctly predicts 8756 (0.8756)
+
+Evaluating each submodel's accuracy
+Out of 10000 test samples, the submodel {0} correctly predicts 8445 (0.8445)
+Out of 10000 test samples, the submodel {1} correctly predicts 8455 (0.8455)
+Out of 10000 test samples, the submodel {2} correctly predicts 8462 (0.8462)
