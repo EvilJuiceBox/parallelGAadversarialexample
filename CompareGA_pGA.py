@@ -216,7 +216,7 @@ def generateParallelGAResults(filepath, resultfolderpath, skip=0, count=30):
             # generate adversarial example here.
             total += 1
             pgaStartTime = time.time()
-            pgaExample, pgaGeneration = cgGA.generate(populationSize=32, generation=10000,
+            pgaExample, pgaGeneration = cgGA.generate(populationSize=20, generation=10000,
                                                                           inputImage=image, model=model,
                                                                           y_truth=groundtruth, IMAGEDIMENSION=32)
             pgaEndtime = time.time() - pgaStartTime
@@ -327,7 +327,7 @@ def generateFineGrainedGA(filepath, resultfolderpath, skip=0, count=30):
             # generate adversarial example here.
             total += 1
             pgaStartTime = time.time()
-            pgaExample, pgaGeneration, queryCount = fgGA.generate(populationSize=4, grid_size=5, overlap_region="L5", generation=10000,
+            pgaExample, pgaGeneration, queryCount = fgGA.generate(populationSize=4, grid_size=3, overlap_region="L5", generation=10000,
                                                                           inputImage=image, model=model,
                                                                           y_truth=groundtruth, IMAGEDIMENSION=32)
             pgaEndtime = time.time() - pgaStartTime
@@ -594,8 +594,8 @@ def generateTradHighConfResults(filepath, resultfolderpath, skip=0, count=30):
 
 def main(args):
     # generateGAResults("resnet20.h5", "100individualga", count=50)  # 5 nonmutually exclusive items
-    # generateParallelGAResults("resnet20.h5", "100individualpga", count=50)  # 5 nonmutually exclusive items
-    generateFineGrainedGA("resnet20.h5", "50individualfgga", count=50)
+    generateFineGrainedGA("resnet20.h5", "50individualfgga_3grid", count=50)
+    generateParallelGAResults("resnet20.h5", "50individualpga_5island", count=50)  # 5 nonmutually exclusive items
     # generateHighConfResults("resnet20.h5", "50individualhga", count=50)  # 5 nonmutually exclusive items
     # generateTradHighConfResults("resnet20.h5", "50individualtradhga", count=50)
 

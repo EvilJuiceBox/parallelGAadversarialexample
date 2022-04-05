@@ -7,7 +7,7 @@ class CourseGrainedGeneticAlgorithm(GeneticAlgorithm):
     '''
     def generate(self, populationSize, generation, inputImage, model, y_truth, IMAGEDIMENSION):
         print("parallelGA start, best member migrates every 10 generations.")
-        islandCount = 3  # 3 island, might allow dynamic allocation later
+        islandCount = 5  # 3 island, might allow dynamic allocation later
         numberOfChildren = 3  # 3 children per generation.
         tournamentSize = 3  # tournament size
         islands = []
@@ -64,9 +64,9 @@ class CourseGrainedGeneticAlgorithm(GeneticAlgorithm):
                 migrate = 0  # keep the best performing member of the island on its own island
 
                 temp = islands[0][migrate]
-                islands[0][migrate] = islands[1][migrate]
-                islands[1][migrate] = islands[2][migrate]
-                islands[2][migrate] = temp
+                for rotate in range(islandCount-1):
+                    islands[rotate][migrate] = islands[rotate+1][migrate]
+                islands[islandCount-1][migrate] = temp
 
             if i % 100 == 0:
                 print("End of generation: " + str(i) + "; Best performing member: " + str(

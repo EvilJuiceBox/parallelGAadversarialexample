@@ -30,7 +30,7 @@ def main(args):
     # print(collection)
 
     # pickle_in = open("./high_conf_ga/highconfalgorithmresult.pickle", "rb")
-    pickle_in = open("./100individualpga/pgaalgorithmresult.pickle", "rb")
+    pickle_in = open("./50individualfgga_3grid/pgaalgorithmresult.pickle", "rb")
     pgaCollection = pickle.load(pickle_in)
     count = len(collection)
 
@@ -211,7 +211,7 @@ def main(args):
     fig.tight_layout(pad=2.0)
     # function to show the plot
     plt.show()
-    genplt.show
+    # genplt.show
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

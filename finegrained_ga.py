@@ -84,6 +84,8 @@ class FineGrainedGeneticAlgorithm(GeneticAlgorithm):
         return self.getBestMember(grid[0]).getImage(), -1, queryCount
 
     def getL5Population(self, grid):
+        import time
+        current = time.time()
         overlapping_population = copy.deepcopy(grid)
         N = len(grid)
 
@@ -98,6 +100,7 @@ class FineGrainedGeneticAlgorithm(GeneticAlgorithm):
                 if c < N - 1:  ## right
                     overlapping_population += grid[r][c+1]
 
+        print(f"it took {time.time()-current} time to get a population")
         return overlapping_population
 
     """

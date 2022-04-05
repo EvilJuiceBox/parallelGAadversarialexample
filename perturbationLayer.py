@@ -75,7 +75,7 @@ def calculate_perturbation(filepath, resultfolderpath, image_index=0):
     # print(np.where(ground_truth==1)[0][0])
     # print(np.argmax(ground_truth))
     predicted = model.predict(np.expand_dims(image, 0))
-    print(f"The original predicted label is {DeepNeuralNetworkUtil.getClassLabel(np.argmax(predicted))} with a confidence of {predicted[0][np.argmax(predicted)]}")
+    print(f"The original predicted label is {DeepNeuralNetworkUtil.getClassLabel(predicted)} with a confidence of {predicted[0][np.argmax(predicted)]}")
     if np.argmax(ground_truth) != np.argmax(predicted):
         print("failed to correctly predict original image")
 
@@ -120,9 +120,13 @@ def calculate_perturbation(filepath, resultfolderpath, image_index=0):
     img.save("./" + resultfolderpath + "/" + "perturbation_noise_layer.png")
     print(imgTitle)
 
+    import pickle
+    file = open("advImg", "wb")
+    pickle.dump(advImage, file)
+    file.close()
 
 def main(args):
-    calculate_perturbation("resnet20.h5", "fgGA_test", image_index=1001)
+    calculate_perturbation("resnet20.h5", "fgGA_test", image_index=1036)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
