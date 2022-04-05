@@ -30,9 +30,10 @@ def main(args):
     # print(collection)
 
     # pickle_in = open("./high_conf_ga/highconfalgorithmresult.pickle", "rb")
-    pickle_in = open("./50individualfgga_3grid/pgaalgorithmresult.pickle", "rb")
+    pickle_in = open("./100individualpga/pgaalgorithmresult.pickle", "rb")
     pgaCollection = pickle.load(pickle_in)
-    count = len(collection)
+    # count = len(collection)
+    count = 30
 
     genCount, l1Count, l2Count = 0, 0, 0
     gen, l1norm, l2norm = 0, 0, 0
@@ -52,7 +53,7 @@ def main(args):
     outlier_pga = []
 
     counter = 0
-    while numprocessed < 30:
+    while numprocessed < count:
         modelResult = next((x for x in collection if x.testnumber == starting_index + counter), None)
         pgaResult = next((x for x in pgaCollection if x.testnumber == starting_index + counter), None)
         counter += 1

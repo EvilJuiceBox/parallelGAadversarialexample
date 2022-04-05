@@ -594,7 +594,7 @@ def generateTradHighConfResults(filepath, resultfolderpath, skip=0, count=30):
 
 def main(args):
     # generateGAResults("resnet20.h5", "100individualga", count=50)  # 5 nonmutually exclusive items
-    generateFineGrainedGA("resnet20.h5", "50individualfgga_3grid", count=50)
+    # generateFineGrainedGA("resnet20.h5", "50individualfgga_3grid", count=50)
     generateParallelGAResults("resnet20.h5", "50individualpga_5island", count=50)  # 5 nonmutually exclusive items
     # generateHighConfResults("resnet20.h5", "50individualhga", count=50)  # 5 nonmutually exclusive items
     # generateTradHighConfResults("resnet20.h5", "50individualtradhga", count=50)
