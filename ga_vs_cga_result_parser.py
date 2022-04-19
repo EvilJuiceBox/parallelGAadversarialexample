@@ -24,13 +24,13 @@ def main(args):
         9: 'truck',
     }
 
-    pickle_in = open("./50individualpga/pgaalgorithmresult.pickle", "rb")
+    pickle_in = open("./100individualpga/pgaalgorithmresult.pickle", "rb")
     collection = pickle.load(pickle_in)
     # print(type(collection))
     # print(collection)
 
     # pickle_in = open("./high_conf_ga/highconfalgorithmresult.pickle", "rb")
-    pickle_in = open("./100individualpga/pgaalgorithmresult.pickle", "rb")
+    pickle_in = open("./50individualpga_5island/pgaalgorithmresult.pickle", "rb")
     pgaCollection = pickle.load(pickle_in)
     # count = len(collection)
     count = 30
